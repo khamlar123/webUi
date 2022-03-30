@@ -1,0 +1,24 @@
+
+<div class="vido-wrapper" >
+    <div class="vdio-title">
+      <h3 style="color: #1e73be;">ວິດີໂອການເຄື່ອນໄຫວ</h3>
+    </div>
+
+    <iframe  [src]="safeSrc[pos]"  frameborder="0" allowfullscreen style="height: 400px;"></iframe>
+    <div class="vdio-info">
+        <!-- <p *ngIf="pos">{{vdioList[pos].video_description}}</p> -->
+    </div>
+
+    <div class="vdio-list">
+        <ng-container *ngFor="let item of vdioList;let i = index">
+          <div class="item "  style="cursor: pointer;">
+            <div class="vdio-fram" >
+              <iframe  [src]="safeSrc[i]" frameborder="0" allowfullscreen style="width: 150px; height: 100px;"></iframe>
+            </div>
+            <div class="vdio-detail">
+              <p>{{item.video_description}}</p>
+            </div>
+          </div>
+        </ng-container>
+    </div>
+  </div>

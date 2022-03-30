@@ -1,0 +1,181 @@
+<div class="container">
+  <div class="nav-menu-wrapper">
+    <div class="top-nav">
+      <div class="item-option">
+
+        <div class="nav-title">
+          <p>DIP: 021 123456-789 | IP Service Center: 021 123456</p>
+        </div>
+
+        <div class="option-action">
+          <div class="btn-show-search">
+            <button (click)="showSearch =!showSearch" [ngClass]="{'active-bg': showSearch}">
+              <span class="material-icons">
+                search
+              </span>
+            </button>
+            <div class="w3-animate-top search-wrapper" *ngIf="showSearch">
+              <input type="text">
+              <span class="material-icons" (click)="showSearch =!showSearch">
+                search
+              </span>
+            </div>
+          </div>
+
+          <div class="sw-lg">
+            <div class="lang-wrapp">
+              <img
+                src="{{lang== 'la'?'../../../assets/lang-icon/lao_flag.svg':'../../../assets/lang-icon/usa_flag.svg'}}"
+                alt="">
+              <p>{{lang == 'la'?'ລາວ':'English'}}</p>
+            </div>
+            <div class="select-lang">
+              <div class="lao" (click)="lang = 'la'">
+                <img src="../../../assets/lang-icon/lao_flag.svg" alt="">
+                <p>ລາວ</p>
+              </div>
+              <div class="eng" (click)="lang = 'eng'">
+                <img src="../../../assets/lang-icon/usa_flag.svg" alt="">
+                <p>English</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="body-nav">
+      <div class="body-content">
+
+        <div class="logo" [routerLink]="['/home']" routerLinkActive="router-link-active">
+          <img src="../assets/logo/logo_ponsaly.jpeg" alt="">
+        </div>
+
+        <div class="title">
+          <h3>ພະແນກອຸດສາຫະກຳ ແລະ ການຄ້າ ແຂວງຜົ້ງສາລີ</h3>
+          <h4>Phongsaly Province Department of Industry and Commerce</h4>
+        </div>
+        <div></div>
+        <!-- <div class="logo">
+                  <img src="../../../assets/logo/logo.png" alt="">
+              </div> -->
+
+      </div>
+    </div>
+
+    <div class="menu-nav">
+      <div class="menu-option">
+        <div class="menu-item no-pl">
+          <a class="fromLeft" href="javascript:void(0)" [routerLink]="['/home']"
+            routerLinkActive="router-link-active">ຫນ້າຫຼັກ </a> <span>|</span>
+          <!-- <div class="hover-menu">
+                          <p>Laos Company </p>
+                          <p>Banking and Finance</p>
+                          <p>Energy and Mining</p>
+                          <p>Corporate and</p>
+                          <p>Taxation</p>
+                      </div> -->
+        </div>
+
+        <div class="menu-item">
+          <a class="fromLeft" href="javascript:void(0)" [routerLink]="['/depament-info']"
+            routerLinkActive="router-link-active">ກ່ຽວກັບພະແນກ</a> <span>|</span>
+          <div class="hover-menu m2">
+            <p [routerLink]="['/depament-info']" routerLinkActive="router-link-active">ພາລະບົດບາດຂອງພະແນກ </p>
+            <p [routerLink]="['/spacing']" routerLinkActive="router-link-active">ໂຄງຮ່າງການຈັດຕັ້ງຂອງພະແນກ</p>
+            <p [routerLink]="['/contact']" routerLinkActive="router-link-active">ຊ່ອງທາງຕິດຕໍ່ພະແນກ</p>
+            <p [routerLink]="['/assistance']" routerLinkActive="router-link-active">ບັນດາໂຄງການຊ່ວຍເຫຼືອ</p>
+            <p [routerLink]="['/siteLinks']" routerLinkActive="router-link-active">ບັນດາລີ້ງເວັບໄຊອື່ນ</p>
+            <p [routerLink]="['/process']" routerLinkActive="router-link-active">ຂະແຫນງການ</p>
+            <p [routerLink]="['/map']" routerLinkActive="router-link-active">ຫ້ອງການ ອຄ ເມືອງ</p>
+            <p [routerLink]="['/development-plan']" routerLinkActive="router-link-active">ແຜນພັດທະນາ</p>
+            <p [routerLink]="['/form-requests']" routerLinkActive="router-link-active">ບ່ອນຮັບຄຳຮ້ອງ </p>
+            <p [routerLink]="['/depament-report']" routerLinkActive="router-link-active">ບົດສະຫຼຸບ</p>
+          </div>
+        </div>
+
+        <div class="menu-item">
+          <a class="fromLeft" href="javascript:void(0)">ສະຖິຕິອຸດສາຫະກໍາປຸງແຕ່ງ ແລະ ການຄ້າ</a> <span>|</span>
+          <div class="hover-menu m2">
+            <p [routerLink]="['/statistics/1']" routerLinkActive="router-link-active">ສະຖິຕິພະນັກງານລັດຖະກອນ </p>
+            <p [routerLink]="['/statistics/2']" routerLinkActive="router-link-active">ສະຖິຕິອຸດສາຫະກໍາ ແລະ ຫັດຖະກໍາ</p>
+            <p [routerLink]="['/statistics/3']" routerLinkActive="router-link-active">ສະຖິຕິການຄ້າພາຍໃນ</p>
+            <p [routerLink]="['/statistics/4']" routerLinkActive="router-link-active">ສະຖິຕິທະບຽນວິສາຫະກິດ</p>
+            <p [routerLink]="['/statistics/5']" routerLinkActive="router-link-active">ສະຖິຕິນໍາເຂົ້າ ແລະ ສົ່ງອອກ</p>
+            <p [routerLink]="['/statistics/6']" routerLinkActive="router-link-active">ສະຖິຕິວິສາຫະກິດຂະໜາດນ້ອຍ ແລະ ກາງ</p>
+          </div>
+        </div>
+
+        <div class="menu-item">
+          <a class="fromLeft" href="javascript:void(0)" [routerLink]="['/product-list/1']"
+            routerLinkActive="router-link-active">ສິນຄ້າ ODOP ແລະ ສິນຄ້າທ່າແຮງ</a> <span>|</span>
+          <!-- <div class="hover-menu m2">
+            <p>Laos Company </p>
+            <p>Banking and Finance</p>
+            <p>Energy and Mining</p>
+            <p>Corporate and</p>
+            <p>Taxation</p>
+          </div> -->
+        </div>
+
+        <div class="menu-item">
+          <a class="fromLeft" href="javascript:void(0)" [routerLink]="['/teaproducts']"
+            routerLinkActive="router-link-active">ຜະລິດຕະພັນຊາ / Tea</a> <span>|</span>
+          <!-- <div class="hover-menu m2">
+            <p>ສະຖິຕິພະນັກງານລັດຖະກອນ</p>
+            <p>ສະຖິຕິອຸດສາຫະກໍາ ແລະ ຫັດຖະກໍາ</p>
+            <p>ສະຖິຕິການຄ້າພາຍໃນ</p>
+            <p>ສະຖິຕທິ ະບຽນ</p>
+            <p>ສະຖິຕິນໍາເຂົ້າ ແລະ ສົ່ງອອກ</p>
+          </div> -->
+        </div>
+
+        <div class="menu-item">
+          <a class="fromLeft" href="javascript:void(0)">ສະພາການຄ້າ ແລະ ອຸດສາຫະກໍາແຂວງ </a> <span>|</span>
+          <div class="hover-menu m2">
+            <p><a href="javascript:void(0)" [routerLink]="['/ouline/1']"
+                routerLinkActive="router-link-active">ໂຄງ​ຮ່າງ​ການ​ຈັດ​ຕັ້ງ</a> </p>
+            <p><a href="javascript:void(0)" [routerLink]="['/ouline/2']"
+                routerLinkActive="router-link-active">ສະມາຊິກ</a> </p>
+          </div>
+        </div>
+
+        <div class="menu-item">
+          <a class="fromLeft" href="javascript:void(0)"> ຂໍ້ມູນຂ່າວສານ</a> <span>|</span>
+          <div class="hover-menu m2">
+            <p><a href="javascript:void(0)" [routerLink]="['/news-list/1']"
+                routerLinkActive="router-link-active">ຂ່າວສານ</a> </p>
+            <p><a href="javascript:void(0)" [routerLink]="['/news-list/2']"
+                routerLinkActive="router-link-active">ຮູບພາບການເຄືນໄຫວ</a> </p>
+            <p><a href="javascript:void(0)" [routerLink]="['/news-list/3']"
+                routerLinkActive="router-link-active">ວີດີໂອການເຄືອນໄຫວ</a> </p>
+
+          </div>
+        </div>
+
+
+
+        <div class="menu-item">
+          <a class="fromLeft" href="javascript:void(0)" [routerLink]="['/documents/1']"
+            routerLinkActive="router-link-active">ເອກະສານ </a>
+          <div class="hover-menu m2">
+            <p><a href="javascript:void(0)" [routerLink]="['/documents/1']"
+                routerLinkActive="router-link-active">ກົດຫມາຍ</a> </p>
+            <p><a href="javascript:void(0)" [routerLink]="['/documents/2']"
+                routerLinkActive="router-link-active">ດໍາລັດ</a> </p>
+            <p><a href="javascript:void(0)" [routerLink]="['/documents/3']"
+                routerLinkActive="router-link-active">ຄໍາສັ່ງ</a> </p>
+            <p><a href="javascript:void(0)" [routerLink]="['/documents/4']"
+                routerLinkActive="router-link-active">ຄໍາແນະນໍາ ຫຼື ບົດແນະນໍາ</a> </p>
+            <p><a href="javascript:void(0)" [routerLink]="['/documents/5']"
+                routerLinkActive="router-link-active">ຂໍ້ຕົກລົງ</a> </p>
+            <p><a href="javascript:void(0)" [routerLink]="['/documents/6']"
+                routerLinkActive="router-link-active">ແຈ້ງການ</a> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container card" style="margin-top: 1rem;">
+    <div class="process-wrapper ">
+        <div class="title">
+            <h3>ຜະລິດຕະພັນຊາ</h3>
+        </div>
+    </div>
+
+
+    <div class="item-content">
+
+    <ng-container *ngFor="let item of jsonData">
+      <div class="company-wrapper card" [routerLink]="['/teaproducts-detail/',item.teaId]"
+      routerLinkActive="router-link-active" >
+        <div class="img-wrapper">
+            <img [src]="getImg(item.teacLogo)" alt="img">
+        </div>
+        <div class="company-name">
+            <p>{{item.teaDsc}}</p>
+        </div>
+      </div>
+    </ng-container>
+
+
+
+    </div>
+
+
+
+</div>

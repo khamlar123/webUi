@@ -1,0 +1,44 @@
+main{
+  display: grid;
+  grid-template-rows: auto auto 1fr 40px;
+  background-color: whitesmoke;
+
+  .header{
+    grid-row: 1/2;
+    .banner-slider{
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1366px;
+      height: 380px;
+
+      overflow: hidden;
+
+    }
+  }
+
+  .slider{
+    grid-row: 2/3;
+    margin: 0 auto;
+    width: 100%;
+    // max-width: 1366px;
+    max-width: 1280px;
+  }
+
+  .stiky-menu{
+    position: -webkit-sticky;
+    position: sticky;
+    top: -180px;
+    z-index: 1;
+  
+  }
+
+
+  .body{
+    grid-row: 3/4;
+  }
+
+  .footer{
+    grid-row: 4/5;
+    margin-top: -10px;
+  }
+}

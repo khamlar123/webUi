@@ -1,0 +1,74 @@
+<div class="container ">
+  <div class="home-wrapper">
+    <div class="grid-item">
+      <app-vdio></app-vdio>
+      <div class="img-slider">
+        <h3>ຮູບພາບການເຄື່ອນໄຫວ</h3>
+        <div class="img-wrapper">
+          <div class="slider-wrapper">
+            <ng-container *ngFor="let item of bannerRef1List; let i = index">
+              <a href="" [routerLink]="'/category-list'" target="blink"><img *ngIf="imgIndex === i"
+                  src="{{enpoin + getImgUrl(item.imgUrl)}}" alt=""></a>
+            </ng-container>
+
+          </div>
+
+          <div class="dot">
+            <div class="dot-item" *ngFor="let item of bannerRef1List; let i = index"
+              [ngClass]="{'active-dot': imgIndex === i}" (click)="dotFunc(i)">
+            </div>
+          </div>
+
+          <div class="btn-action">
+            <button (click)="nextAndBlackFunc(0)">
+              <span class="material-icons">
+                arrow_back_ios_new
+              </span>
+            </button>
+
+            <button (click)="nextAndBlackFunc(1)">
+              <span class="material-icons">
+                arrow_forward_ios
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <div class="new-title">
+        <h3 style="color: #1e73be;">ຂ່າວຫຼາສຸດ</h3>
+      </div>
+      <div class="news-wrapper" *ngFor="let item of newsList" [routerLink]="['/detail',item.news_id]"
+        routerLinkActive="router-link-active">
+        <div class="news-img">
+          <img src="http://216.127.173.163/{{item.imgUrl[0]}}" alt="">
+          <div class="news-bg">
+            <div class="news-title">
+              <h4>{{item.title}}</h4>
+            </div>
+            <div class="news-content">
+              <p>{{item.dsc}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="product-wrapper">
+    <app-hot-product [title]="'ສີນຄ້າຜົ້ງສາລີ'" [prodList]="prodList1"></app-hot-product>
+  </div>
+
+  <div class="product-wrapper" style="margin-bottom: 1rem;" >
+    <app-hot-product [title]="'ສີນຄ້າອຸດົມໄຊ'" [prodList]="prodList2"></app-hot-product>
+  </div>
+
+  <div class="product-wrapper" style="margin-bottom: 1rem;">
+    <app-hot-product [title]="'ສີນຄ້າຫຼວງນ້ຳທາ'" [prodList]="prodList3"></app-hot-product>
+  </div> -->
+
+  <app-product-info></app-product-info>
+  <br>
+</div>

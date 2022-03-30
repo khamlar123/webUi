@@ -1,0 +1,44 @@
+<div class="container card" style="margin-top: 1rem">
+  <div class="process-wrapper ">
+    <div class="title" style="margin-bottom: 1rem;">
+      <h3>ຂະແໜງການ</h3>
+    </div>
+  </div>
+
+  <!-- <div class="conten-wrapper">
+    <div class="content-data">
+      <div class="info">
+        <h3>1) ຫ້ອງການສັງລວມບໍລິຫານ ແລະ ຈັດຕັ້ງ ພະນັກງານງານ</h3>
+        <h3>2) ຂະແໜງແຜນການ ແລະ ການຮ່ວມມື</h3>
+        <h3>3) ຂະແໜງກວດກາລັດ</h3>
+        <h3>4) ຂະແໜງອຸດສາຫະກຳ ແລະ ຫັດຖະກຳ</h3>
+        <h3>5) ຂະແໜງການຄ້າພາຍໃນ</h3>
+        <h3>6) ຂະແໜງທະບຽນ ແລະ ຄຸ້ມຄອງວິສາຫະກິດ</h3>
+        <h3>7) ຂະແໜງນຳເຂົ້າ ແລະ ສົ່ງອອກ</h3>
+        <h3>8) ຂະແໜງສົ່ງເສີມວິສາຫະກິດຂະໜາດນ້ອຍ ແລະ ກາງ ແລະ ການຄ້າ</h3>
+        <h3>9) ຂະແໜງຊັບສິນທາງປັນຍາ, ມາດຕະຖານ ແລະ ວັດແທກ</h3>
+      </div>
+    </div>
+  </div> -->
+
+  <ng-container *ngFor="let item of getData()">
+    <div class="item-content">
+      <div class="item-title">
+        {{item.prTitle}}
+        <div class="btn">
+          <span class="material-icons " [ngClass]="{'arrowsp': show && prid === item.prId}"
+            (click)="show = !show;prid = item.prId">
+            arrow_drop_down
+          </span>
+        </div>
+      </div>
+
+      <div class="item-body" [ngClass]="{'showDel': show &&  prid === item.prId}">
+        <p>{{item.prDsc}}</p>
+      </div>
+    </div>
+  </ng-container>
+
+
+
+</div>

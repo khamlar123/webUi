@@ -1,0 +1,17 @@
+.caontainer{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+
+
+  .spacing-wrapper{
+    width: 1366px;
+    overflow: auto;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+}

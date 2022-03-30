@@ -1,0 +1,86 @@
+<div class="container">
+  <div class="doc-wrapper card">
+    <div class="title">
+      <h3>{{getname()}}</h3>
+    </div>
+
+
+    <div class="content" style="margin: 1rem 0;">
+      <div class="table-wrapper" style="width: 1340px" *ngIf="id != 8">
+        <table>
+          <tr>
+            <th style="width: 80px;">ລ/ດ</th>
+            <th>ຊື່</th>
+            <th>ລາຍລະອຽດ</th>
+            <th style="width: 150px;">ວັນທີ</th>
+            <th style="width: 150px;">ດາວໂລດ</th>
+          </tr>
+          <tr *ngFor="let item of getData();let i = index">
+            <td>{{i+1}}</td>
+            <td>
+              
+                {{item.title}}
+              
+            </td>
+            <td>
+              <p id="hiden">
+                {{item.dsc}}
+              </p>
+            </td>
+            <td>{{item.createDate}}</td>
+            <td> 
+              <a href="{{ getLink(item.fileLa)}}" target="blank"> ລາວ</a> | <a href="{{getLink(item.fileEn)}}" target="blank"> ອັງກິດ</a>
+       
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="form-wrapper" *ngIf="id === 8">
+
+        <div class="header-item">
+          <h3>ບ່ອນຮັບຄຳຮ້ອງ</h3>
+          <p>ກະລຸນາແຈ້ງໃຫ້ພວກເຮົາຮູ້ວ່າທ່ານບ່ອນຮັບຄຳຮ້ອງ</p>
+        </div>
+
+        <div class="combo">
+          <div class="item">
+            <label for="">ຊື່</label>
+            <input type="text" placeholder="ຊື່">
+          </div>
+          <div class="item">
+            <label for="">ນາມສະກຸນ</label>
+            <input type="text" placeholder="ນາມສະກຸນ">
+          </div>
+        </div>
+
+        <div class="input-item">
+          <label for="">ໂທລະສັບ</label>
+          <input type="text" placeholder="ໂທລະສັບ">
+        </div>
+
+        <div class="input-item">
+          <label for="">ຫົວຂ້ຄໍາຮອງ</label>
+          <input type="text" placeholder="The Reson">
+        </div>
+
+        <div class="input-item">
+          <label for="upload" id="forupload">ອັບໂລດ</label>
+          <input type="file" id="upload" style="display: none;">
+        </div>
+
+        <div class="input-item">
+          <label for="">ລາຍລະອຽດ</label>
+          <textarea name="" id="" cols="30" rows="5"></textarea>
+        </div>
+
+        <div class="btn">
+          <button>ສົ່ງຟອມ</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

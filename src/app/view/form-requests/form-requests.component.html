@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="doc-wrapper card">
+    <div class="title">
+      <h3>ບ່ອນຮັບຄຳຮ້ອງ</h3>
+    </div>
+
+
+    <div class="content" style="margin: 1rem 0;">
+
+      <div class="form-wrapper" >
+
+        <div class="header-item">
+          <h3>ບ່ອນຮັບຄຳຮ້ອງ</h3>
+          <p>ກະລຸນາແຈ້ງໃຫ້ພວກເຮົາຮູ້ວ່າທ່ານບ່ອນຮັບຄຳຮ້ອງ</p>
+        </div>
+
+        <div class="combo">
+          <div class="item">
+            <label for="">ຊື່</label>
+            <input type="text" placeholder="ຊື່" [(ngModel)]="addForm.proposName">
+          </div>
+          <div class="item">
+            <label for="">ນາມສະກຸນ</label>
+            <input type="text" placeholder="ນາມສະກຸນ" [(ngModel)]="addForm.proposeLastName">
+          </div>
+        </div>
+
+        <div class="input-item">
+          <label for="">ໂທລະສັບ</label>
+          <input type="text" placeholder="ໂທລະສັບ" [(ngModel)]="addForm.phone">
+        </div>
+
+        <div class="input-item">
+          <label for="">ຫົວຂ້ຄໍາຮອງ</label>
+          <input type="text" placeholder="The Reson" [(ngModel)]="addForm.stTitle">
+        </div>
+
+        <!-- <div class="input-item">
+          <label for="upload" id="forupload">ອັບໂລດ</label>
+          <input type="file" id="upload" style="display: none;">
+        </div> -->
+
+        <div class="input-item">
+          <label for="">ລາຍລະອຽດ</label>
+          <textarea name="" id="" cols="30" rows="5" [(ngModel)]="addForm.contactDsc"></textarea>
+        </div>
+
+        <div class="btn">
+          <button (click)="addFunc()">ສົ່ງຟອມ</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

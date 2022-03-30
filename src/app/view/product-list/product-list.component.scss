@@ -1,0 +1,14 @@
+.product-wrapper{
+  margin: 1rem 0;
+  margin-bottom: 1.5rem;
+  .content{
+    width: 1366px;
+    margin: 0 auto;
+    min-height: calc(100vh - 518px);
+    height: 100%;
+
+    .item{
+      margin-top: 1rem;
+    }
+  }
+}

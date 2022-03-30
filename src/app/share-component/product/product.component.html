@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="super-deal">
+
+    <div class="head-super-deal">
+      <div class="the-side">
+        <img src="../assets/product-ex/super_deal.svg" alt="">
+        <p> ສິນຄ້າ</p>
+      </div>
+      <div class="the-side see-more">
+        <a href="javascript:void(0)" ></a>
+        <!-- <span class="material-icons" style="color: #ff4747;">
+          navigate_next
+          </span> -->
+      </div>
+    </div>
+
+    <div class="content-deal">
+      <a class="product-deal"  *ngFor="let prod of productList" [routerLink]="[productLink(prod.prod_id)]" routerLinkActive="router-link-active" >
+        <div class="product-deal-img">
+          <img src="http://216.127.173.163/{{prod.imgUrl[0]}}" alt="super deal">
+        </div>
+
+        <div class="title-price">
+          <h5>{{prod.prodName}}</h5>
+          <h5>{{prod.dsc}}</h5>
+          <!-- <p id="price">₭ {{prod.salsePrice | currency: '':'':'1.0-0'}}</p> -->
+        </div>
+
+        <div class="discount">
+          <!-- <ng-container >
+            <del>₭ {{prod.price}}</del>
+            <p id="percent"> {{((prod.salsePrice/prod.price)) *100 - 100}}%</p>
+
+          </ng-container> -->
+        </div>
+      </a>
+
+
+    </div>
+
+
+
+
+
+
+  </div>
+</div>

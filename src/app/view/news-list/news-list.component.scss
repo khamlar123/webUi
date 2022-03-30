@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+
+  .depament-info-wrapper {
+    width: 1366px;
+    margin: 0.5rem 0;
+    margin-bottom: 1.5rem;
+
+    height: auto;
+    .img-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .allNewList-warrper {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    .item1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 1rem 0;
+      a {
+        text-decoration: none;
+        color: black;
+        &:hover {
+          color: blue;
+        }
+      }
+      .news-item {
+        .cover-imtg {
+
+          overflow: hidden;
+          width: 100%;
+          .img-wrap {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+
+
+      }
+
+      .vdio-wrapp{
+        height: 480px;
+        p{
+          margin: 0 auto;
+          font-weight: normal;
+          word-break: break-word;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+
+          margin-top: 0.5rem;
+        }
+      }
+    }
+
+
+  }
+}

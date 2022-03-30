@@ -1,0 +1,22 @@
+<div class="container">
+
+    <div class="detail-wrapper">
+      <div class="title">
+          <h3>ລາຍລະອຽດຮູບພາບການເຄື່ອນໄຫວ</h3>
+      </div>
+        <div class="content">
+          <div class="img-wrapper">
+            <img [src]="enpoin + getImgUrl(bandDetail.imgUrl)" alt="">
+          </div>
+          <div class="info">
+            <p>{{bandDetail.dsc}}</p>
+          </div>
+
+          <!-- <div class="cover-wraper" *ngIf="coverList.length > 0">
+              <div class="item" *ngFor="let co of coverList[0].imgUrl; let i = index">
+                <img src="http://216.127.173.163/{{co}}" alt="">
+              </div>
+          </div> -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="modal-wrapper">
+  <div class="content card">
+
+    <div class="content-wrapper">
+      <div class="header">
+        <div class="item">
+          <div class="img-warpper">
+            <img [src]="modal.logo" alt="">
+          </div>
+          <h3>
+            {{modal.asName}}
+          </h3>
+        </div>
+
+        <div class="item">
+          <span class="material-icons" (click)="close.emit(true)">
+            close
+          </span>
+        </div>
+
+
+      </div>
+
+      <div class="info">
+        <h3>{{modal.asTitle}}</h3>
+        <p>{{modal.asDes}}</p>
+      </div>
+    </div>
+
+
+  </div>
+</div>

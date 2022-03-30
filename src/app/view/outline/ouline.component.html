@@ -1,0 +1,54 @@
+<div class="container card" style="margin-top: -0.1rem;">
+  <div class="ouline-wrapper">
+
+    <div class="title" style="margin-bottom: 1rem;">
+      <h3>{{(id === 1)? 'ກ່ຽວ​ກັບ​ສະ​ພາ (ລາຍ​ລະ​ອຽດ, ໂຄງ​ຮ່າງ​ການ​ຈັດ​ຕັ້ງ, ເບີ​ໂທ​ຕິດ​ຕໍ່)': 'ສະມາຊິກ' }}</h3>
+    </div>
+
+    <div class="kong-sang" *ngIf="id === 1">
+      <div class="chartOne" style="margin-bottom: 2rem;">
+        <app-org-data [modal]="masterOrgList1"></app-org-data>
+      </div>
+
+      <div class="chartOne">
+        <app-org-data [modal]="masterOrgList2"></app-org-data>
+      </div>
+
+
+    </div>
+
+    <div class="img-wrapper" *ngIf="id === 2">
+
+      <div class="search-wrapper">
+        <button (click)="searchFunc()">ຄົນຫາ</button>
+        <input type="text" placeholder="ຄົນຫາ" [(ngModel)]="searchValue" (keyup.enter)="searchFunc()">
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <tr>
+            <th style="width:50px">ລ/ດ</th>
+            <th style="width:200px">ຊື່ ແລະ ນາມສະກັນ</th>
+            <th style="width:100px">ຕໍາແໜ່ງ</th>
+            <th>ປະເພດທຸລະກິດ</th>
+            <th style="width:200px">ທີຢູ່</th>
+            <th style="width:100px">ເບີໂທ</th>
+            <th style="width:200px">ວັນເດືອນປີເຂົ້າສະມາຊິກ</th>
+          </tr>
+          <tr *ngFor="let item of jsonData">
+            <td>{{item.emId}}</td>
+            <td>{{item.emName +''+item.emLastName}}</td>
+            <td>{{item.emPosition}}</td>
+            <td></td>
+            <td>{{item.emAddress}}</td>
+            <td>{{item.emPhone}}</td>
+            <td>{{item.emJoinDate}}</td>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+
+
+  </div>
+</div>

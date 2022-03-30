@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="depament-info-wrapper card" style="margin-top: 1rem">
+    <div class="title">
+      <h3>{{(id === 1 )? "ຂ່າວສານ" : (id === 2)? "ຮູບພາບການເຄືນໄຫວ": "ວີດີໂອການເຄືອນໄຫວ"}}</h3>
+
+      <div class="content">
+        <ng-container *ngIf="id === 1">
+          <app-news-wrapper [modal]="newsList" [ListCunt]="newsListCount"></app-news-wrapper>
+        </ng-container>
+
+        <ng-container *ngIf="id === 2">
+          <div class="allNewList-warrper">
+            <div class="item1">
+
+              <ng-container *ngFor="let item of bannerRef1List">
+                <a href="javascript:void(0)" >
+                  <div class="news-item">
+                    <div class="cover-imtg">
+                      <div class="img-wrap">
+                        <img [src]="enpoin + getImgUrl(item.imgUrl)" alt="img">
+                      </div>
+                    </div>
+                    <div class="new-dsc">
+                      <p>{{item.dsc}}</p>
+                    </div>
+                  </div>
+                </a>
+
+              </ng-container>
+            </div>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="id === 3">
+          <div class="allNewList-warrper">
+            <div class="item1">
+
+              <ng-container *ngFor="let item of vdioList;let i = index">
+                <a href="javascript:void(0)" >
+                  <div class="news-item vdio-wrapp" >
+                    <div class="cover-imtg">
+                      <div class="img-wrap" >
+                        <iframe  [src]="safeSrc[i]" frameborder="0" allowfullscreen style="width: 100%; height: 400px;"></iframe>
+                      </div>
+                    </div>
+                    <div class="new-dsc">
+                      <p>{{item.video_description}}</p>
+                    </div>
+                  </div>
+                </a>
+
+              </ng-container>
+            </div>
+          </div>
+        </ng-container>
+
+
+
+
+        <!-- https://laoedaily.com.la/category/colum-economy/economy/ -->
+
+
+
+      </div>
+
+    </div>
+  </div>
+</div>

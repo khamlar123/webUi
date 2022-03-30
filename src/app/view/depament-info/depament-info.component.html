@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="depament-info-wrapper card" style="margin-top: 1rem">
+    <div class="title">
+      <h3 style="margin-bottom: 1rem;">ພາລະບົດບາດຂອງກົມ</h3>
+
+      <div class="content" style="margin-bottom: 1rem;">
+        <div class="info" *ngFor="let item of jsonData">
+          <h3 style="margin-bottom: 0.5rem;">{{item.dpTitel}}</h3>
+          <p>{{item.dpDsc}}</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

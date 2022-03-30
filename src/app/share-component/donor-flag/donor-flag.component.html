@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="grid-item">
+      <div class="item">
+        <ul>
+        <li>  <a class="fromLeft" href="javascript:void(0)" [routerLink]="['/depament-info']" routerLinkActive="router-link-active">ກ່ຽວກັບພະແນກ</a></li>
+          <li><a class="fromLeft" href="javascript:void(0)" [routerLink]="['/contact']" routerLinkActive="router-link-active">ຊ່ອງທາງຕິດຕໍ່ພະແນກ</a> </li>
+        </ul>
+      </div>
+      <div class="item">
+        <ul>
+          <li> <a class="fromLeft" href="javascript:void(0)" [routerLink]="['/statistics/2']" routerLinkActive="router-link-active">ສະຖິຕິອຸດສາຫະກຳປຸງແຕ່ງ ແລະ ການຄ້າ</a></li>
+          <li><a class="fromLeft" href="javascript:void(0)" [routerLink]="['/product-list/1']" routerLinkActive="router-link-active" >ສິນຄ້າ ODOP ແລະ ສິນຄ້າທ່າແຮງ</a> </li>
+          <li>ຜະລິດຕະພັນຕ່າງໆ</li>
+          <li> <a class="fromLeft" href="javascript:void(0)" [routerLink]="['/ouline/1']" routerLinkActive="router-link-active" >ສະພາການຄ້າ ແລະ ອຸດສຳຫະກຳ</a></li>
+          <li> <a class="fromLeft" href="javascript:void(0)" [routerLink]="['/documents/1']" routerLinkActive="router-link-active" >ເອກະສານ </a></li>
+        </ul>
+      </div>
+      <div class="item">
+        <ul>
+          <li><a class="fromLeft" href="javascript:void(0)" [routerLink]="['/news-list/1']" routerLinkActive="router-link-active">ຂໍ້ມູນຂ່າວສານ</a></li>
+          <li><a class="fromLeft" href="javascript:void(0)" [routerLink]="['/assistance']" routerLinkActive="router-link-active">ບັນດາໂຄງການຊ່ວຍເຫຼືອ</a></li>
+          <li><a class="fromLeft" href="javascript:void(0)" [routerLink]="['/siteLinks']" routerLinkActive="router-link-active">ບັນດາລີ້ງເວັບໄຊອື່ນ</a></li>
+          <li><a class="fromLeft" href="javascript:void(0)" [routerLink]="['/form-requests']" routerLinkActive="router-link-active">ບ່ອນຮັບຄຳຮ້ອງ</a></li>
+        </ul>
+      </div>
+      <div class="item-sponser">
+        <label>ສະໜັບສະໜູນໂດຍ</label>
+        <div class="img-wrap">
+          <ng-container *ngFor="let item of donorList">
+            <img [src]="url + imgUrl(item.imgUrl)" alt="img" >
+          </ng-container>
+          
+         
+          <!-- <img src="../assets/footer/02.png" alt=""> -->
+        </div>
+      </div>
+    </div>
+    <br>
+ 
+  </div>
+</div>
+
+
+<!-- <div class="main">
+  <div class="footer">
+    <div class="contact">
+      <a>ກ່ຽວກັບພະແນກ</a> | <a>ຊ່ອງທາງຕິດຕໍ່ພະແນກ</a>
+    </div>
+    <h4>ສະໜັບສະໜູນໂດຍ</h4>
+    <br>
+    <div class="img-wrapp">
+      <div class="img">
+        <img src="../../../assets/footer/01.png" alt="">
+        <p>ພະແນກອຸດສາຫະກຳ ແລະ ການຄ້າ</p>
+      </div>
+      <div class="img">
+        <img src="../../../assets/footer/02.png" alt="">
+        <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+      </div>
+    </div>
+    <br>
+    <p class="last-title">ການສ້າງເວັບໄຊນີ້ ໄດ້ຮັບການສະໜັບສະໜູນຈາກປະຊາຊົນສະຫະລັດອາເມລິກາ ໂດຍຜ່ານອົງການພັດທະນາສາກົນສະຫະລັດອາເມລິກາ (USAID) ເຊິ່ງອົງການ USAID<br>ຫຼື ລັດຖະບານສະຫະລັດອາເມລິກາ ຈະບໍ່ຮັບຜິດຊອບຕໍ່ຂໍ້ມູນທີ່ເອົາລົງໃນເວັບໄຊດັ່ງກ່າວ</p>
+  </div>
+</div> -->

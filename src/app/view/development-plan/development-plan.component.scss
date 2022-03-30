@@ -1,0 +1,110 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  .title {
+    padding-left: 1rem;
+    padding-top: 1rem;
+  }
+  .doc-wrapper {
+    margin-top: 0.5rem;
+    width: 1366px;
+    background: white;
+    min-height: calc(100vh - 518px);
+    height: 100%;
+    .content {
+      table {
+        tr {
+          th,
+          td {
+            height: 35px;
+          }
+        }
+      }
+      #hiden {
+        width: 900px;
+        margin: 0 auto;
+        font-weight: normal;
+        word-break: break-word;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        max-height: 45px;
+        margin-top: 0.5rem;
+      }
+
+      .form-wrapper {
+        border-top: 5px solid #1b73be;
+        width: 400px;
+        padding: 2rem;
+        background: white;
+        font-size: 13px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+          rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        margin: 0 auto;
+        .header-item {
+          text-align: center;
+          margin: 1rem 0;
+        }
+
+        .input-item {
+          margin-bottom: 1rem;
+          display: flex;
+          flex-direction: column;
+
+          input {
+            height: 35px;
+          }
+
+          #forupload {
+            border: 1px solid gainsboro;
+            background: whitesmoke;
+            width: 80px;
+            padding: 4px;
+            text-align: center;
+          }
+
+          input,
+          textarea {
+            border-radius: 3px;
+            resize: none;
+            outline: none;
+            width: 100%;
+            border: 1px solid gainsboro;
+            padding: 0 0.5rem;
+          }
+        }
+
+        .combo {
+          display: flex;
+          gap: 0.5rem;
+          margin-bottom: 1rem;
+          input {
+            height: 35px;
+            border-radius: 3px;
+            resize: none;
+            outline: none;
+            width: 100%;
+            border: 1px solid gainsboro;
+            padding: 0 0.5rem;
+          }
+        }
+
+        .btn {
+          button {
+            width: 100%;
+            border: none;
+            outline: none;
+            background: #1b73be;
+            color: white;
+            font-weight: bold;
+            height: 35px;
+            border-radius: 3px;
+          }
+        }
+      }
+    }
+  }
+}

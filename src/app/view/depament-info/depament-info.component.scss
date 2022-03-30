@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+
+  .depament-info-wrapper{
+    width: 1366px;
+    margin: 0.5rem 0;
+    margin-bottom: 1.5rem;
+    min-height: calc(100vh - 518px);
+    height: 100%;
+    .img-wrapper{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    .info{
+      margin-bottom: 2rem
+    }
+
+  }
+}

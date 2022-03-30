@@ -1,0 +1,69 @@
+<div class="conteiner" *ngIf="producrDetailList as detail">
+  <div class="detail-content">
+
+    <div class="img-wrapper">
+      <div class="img-thumb">
+        <img src="http://216.127.173.163/{{detail[0].imgUrl[0]}}" alt="">
+      </div>
+    </div>
+
+    <div class="infor-wrapper">
+      <div class="produ-name">
+        <h2>{{detail[0].prodName}}</h2>
+      </div>
+
+      <!-- <div class="product-price">
+        <del>₭ {{detail[0].price | currency: '':'':'1.0-0'}} </del>
+        <p id="price">₭ {{detail[0].salsePrice | currency: '':'':'1.0-0'}}</p>
+        <p id="persen">{{((detail[0].salsePrice/detail[0].price)) *100 - 100}}%</p>
+      </div> -->
+
+      <div class="product-dsc">
+        <p>{{detail[0].dsc}}</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- <div class="product-ranking">
+    <div class="item">
+        <div class="shop-wrapper">
+            <div class="img-wrapper">
+                <img src="../../../assets/product/shop.jpeg" alt="">
+            </div>
+
+            <div class="shop-info">
+                <h3>skywalkershop</h3>
+                <span>ເປີດຕັ້ງແຕ່ 8:00 - 16:00</span>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+      <div class="label-item">
+        <label>ຄະແນນ <span>{{detail[0].score}}</span></label>
+      </div>
+
+      <div class="label-item">
+        <label>ອັດຕາການຕອບຮັບ <span>70%</span></label>
+      </div>
+
+      <div class="label-item">
+        <label>ການເຂົ້າຮ່ວມ <span>{{ detail[0].jointDate }}</span></label>
+      </div>
+
+      <div class="label-item">
+        <label>ລາຍການສີນຄ້າ <span>100</span></label>
+      </div>
+
+      <div class="label-item">
+        <label>ປະກັນ <span> 7 ມື້</span></label>
+      </div>
+
+      <div class="label-item">
+        <label>ຜູຕິດຕາມ <span>100</span></label>
+      </div>
+    </div>
+  </div> -->
+
+</div>

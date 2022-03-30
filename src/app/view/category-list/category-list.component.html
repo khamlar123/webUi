@@ -1,0 +1,22 @@
+<div class="container card" style="margin-top: 1rem">
+    <div class="process-wrapper ">
+        <div class="title">
+            <h3>ຮູບພາບການເຄື່ອນໄຫວ</h3>
+        </div>
+    </div>
+
+  
+    <div class="item-content">
+        <div class="item" (click)="goLink(item.bann_id)" *ngFor="let item of brannList ">
+            <div class="img-wrapper">
+                <img [src]="enpoin + getImgUrl(item.imgUrl)" alt="">
+            </div>
+
+            <div class="desc">
+                    <p>{{item.dsc}}</p>
+            </div>
+        </div>
+    </div>
+
+  </div>
+  
