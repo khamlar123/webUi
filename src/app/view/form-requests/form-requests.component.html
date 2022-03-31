@@ -35,10 +35,10 @@
           <input type="text" placeholder="The Reson" [(ngModel)]="addForm.stTitle">
         </div>
 
-        <!-- <div class="input-item">
+        <div class="input-item">
           <label for="upload" id="forupload">ອັບໂລດ</label>
-          <input type="file" id="upload" style="display: none;">
-        </div> -->
+          <input type="file" id="upload" style="display: none;"  (change)="handleFileInput($event.target)">
+        </div>
 
         <div class="input-item">
           <label for="">ລາຍລະອຽດ</label>
