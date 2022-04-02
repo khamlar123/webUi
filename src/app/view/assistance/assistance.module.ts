@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AssistanceRoutingModule } from './assistance-routing.module';
 import { ModalComponent } from './modal/modal.component';
 import { AssistanceComponent } from './assistance.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { AssistanceComponent } from './assistance.component';
   ],
   imports: [
     CommonModule,
-    AssistanceRoutingModule
+    AssistanceRoutingModule,
+    FormsModule
   ]
 })
 export class AssistanceModule { }

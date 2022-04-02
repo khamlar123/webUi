@@ -91,16 +91,16 @@ const routes: Routes = [
   {
     path: 'siteLinks',
     loadChildren: () =>
-      import('../view/sitelinks/sitelinks-routing.module').then(
-        m => m.SitelinksRoutingModule
+      import('../view/sitelinks/sitelinks.module').then(
+        m => m.SitelinksModule
       ),
   },
 
   {
     path: 'statistics/:id',
     loadChildren: () =>
-      import('../view/statistics/statistics-routing.module').then(
-        m => m.StatisticsRoutingModule
+      import('../view/statistics/statistics.module').then(
+        m => m.StatisticsModule
       ),
   },
 

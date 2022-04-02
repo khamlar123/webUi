@@ -6,16 +6,23 @@
 
 
     <div class="content" style="margin: 1rem 0;">
+
+      <div class="search-wrapper">
+        <button (click)="searchFunc()">ຄົນຫາ</button>
+        <input type="text" placeholder="ຄົນຫາ" [(ngModel)]="searchValue" (keyup.enter)="searchFunc()">
+      </div>
       <div class="table-wrapper" style="width: 1340px" >
         <table>
           <tr>
             <th style="width: 80px;">ລ/ດ</th>
             <th>ຊື່</th>
+            <th>ລາຍລະອຽດ</th>
             <th style="width: 150px;">ວັນທີ</th>
             <th style="width: 150px;">ດາວໂລດ</th>
           </tr>
           <tr *ngFor="let item of getItems();let i = index">
             <td>{{i+1}}</td>
+            <td>{{item.title}}</td>
             <td>
               <p id="hiden">
                 {{item.dsc}}

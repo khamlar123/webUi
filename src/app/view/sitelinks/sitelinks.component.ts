@@ -10,13 +10,20 @@ import { SitelinkService } from './api/sitelink.service';
 })
 export class SitelinksComponent implements OnInit {
   subs = new SubSink();
-
+  searchValue = "";
   jasonData: {
     createDate: Data;
     slLink: string;
     slName: string;
     slid: string;
-  }[] = []
+  }[] = [];
+
+  masterData: {
+    createDate: Data;
+    slLink: string;
+    slName: string;
+    slid: string;
+  }[] = [];
   constructor(public api:SitelinkService) { }
 
   ngOnInit(): void {
@@ -24,7 +31,19 @@ export class SitelinksComponent implements OnInit {
     }
     this.subs.sink = this.api.loadSiteLinks(model).subscribe(res => {
       this.jasonData = res.data;
+      this.masterData = res.data;
     })
+  }
+
+  searchFunc(): void {
+    if (this.searchValue !== '') {
+      const searchData = this.masterData.filter(f => f.slName.includes(this.searchValue.toLocaleLowerCase()));
+
+
+      this.jasonData = searchData;
+    } else {
+      this.jasonData = this.masterData;
+    }
   }
 
 }

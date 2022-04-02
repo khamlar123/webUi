@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { SitelinksRoutingModule } from './sitelinks-routing.module';
 import { SitelinksComponent } from './sitelinks.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [SitelinksComponent],
   imports: [
     CommonModule,
-    SitelinksRoutingModule
+    SitelinksRoutingModule,
+    FormsModule
   ]
 })
 export class SitelinksModule { }

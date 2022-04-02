@@ -10,128 +10,29 @@ import { ApiService } from './api/api.service';
 })
 export class DocumentsComponent implements OnInit {
   id = 0;
-  jsonData: any[] = [
-    {
-      doId : '1',
-      dodsc: 'ໄດ້ແລ້ວຜູ້ຊະນະການແຂ່ງຂັນສືມີແຮງງານ ສາຂາລົດຍົນ 2022 ຈິດຕະພົງ ປັນຍານຸວົງ',
-      refId : '1',
-      createDate: '2022/03/15',
-      doEn: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf',
-      doLa: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf'
-    },
-    {
-      doId : '1',
-      dodsc: 'ໄດ້ແລ້ວຜູ້ຊະນະການແຂ່ງຂັນສືມີແຮງງານ ສາຂາລົດຍົນ 2022 ທ້າວ ຈິດຕະພົງ ປັນຍານຸວົງ',
-      refId : '1',
-      createDate: '2022/03/15',
-      doEn: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf',
-      doLa: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf'
-    },
-    {
-      doId : '1',
-      dodsc: 'ແຊັມ ລາວລີກ 1 ປີ 2022 ຈະໄດ້ຮັບຂັນແຊ້ມ ພ້ອມເງິນລາງວັນ 300 ລ້ານກີບ, ຈະບໍ່ມີທີມຕົກຊັ້ນປີນີ້',
-      refId : '1',
-      createDate: '2022/03/15',
-      doEn: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf',
-      doLa: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf'
-    },
-    {
-      doId : '1',
-      dodsc: 'ແຊັມ ລາວລີກ 1 ປີ 2022 ຈະໄດ້ຮັບຂັນແຊ້ມ ພ້ອມເງິນລາງວັນ 300 ລ້ານກີບ, ຈະບໍ່ມີທີມຕົກຊັ້ນປີນີ້',
-      refId : '1',
-      createDate: '2022/03/15',
-      doEn: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf',
-      doLa: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf'
-    },
-    {
-      doId : '1',
-      dodsc: 'ແຊັມ ລາວລີກ 1 ປີ 2022 ຈະໄດ້ຮັບຂັນແຊ້ມ ພ້ອມເງິນລາງວັນ 300 ລ້ານກີບ, ຈະບໍ່ມີທີມຕົກຊັ້ນປີນີ້',
-      refId : '1',
-      createDate: '2022/03/15',
-      doEn: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf',
-      doLa: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf'
-    },
-    {
-      doId : '1',
-      dodsc: 'ແຊັມ ລາວລີກ 1 ປີ 2022 ຈະໄດ້ຮັບຂັນແຊ້ມ ພ້ອມເງິນລາງວັນ 300 ລ້ານກີບ, ຈະບໍ່ມີທີມຕົກຊັ້ນປີນີ້',
-      refId : '1',
-      createDate: '2022/03/15',
-      doEn: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf',
-      doLa: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf'
-    },
-    {
-      doId : '1',
-      dodsc: 'ແຊັມ ລາວລີກ 1 ປີ 2022 ຈະໄດ້ຮັບຂັນແຊ້ມ ພ້ອມເງິນລາງວັນ 300 ລ້ານກີບ, ຈະບໍ່ມີທີມຕົກຊັ້ນປີນີ້',
-      refId : '1',
-      createDate: '2022/03/15',
-      doEn: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf',
-      doLa: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf'
-    },
-    {
-      doId : '1',
-      dodsc: 'ແຊັມ ລາວລີກ 1 ປີ 2022 ຈະໄດ້ຮັບຂັນແຊ້ມ ພ້ອມເງິນລາງວັນ 300 ລ້ານກີບ, ຈະບໍ່ມີທີມຕົກຊັ້ນປີນີ້',
-      refId : '9',
-      createDate: '2022/03/15',
-      doEn: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf',
-      doLa: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf'
-    },
-    {
-      doId : '1',
-      dodsc: 'ແຊັມ ລາວລີກ 1 ປີ 2022 ຈະໄດ້ຮັບຂັນແຊ້ມ ພ້ອມເງິນລາງວັນ 300 ລ້ານກີບ, ຈະບໍ່ມີທີມຕົກຊັ້ນປີນີ້',
-      refId : '8',
-      createDate: '2022/03/15',
-      doEn: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf',
-      doLa: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf'
-    },
-    {
-      doId : '1',
-      dodsc: 'ແຊັມ ລາວລີກ 1 ປີ 2022 ຈະໄດ້ຮັບຂັນແຊ້ມ ພ້ອມເງິນລາງວັນ 300 ລ້ານກີບ, ຈະບໍ່ມີທີມຕົກຊັ້ນປີນີ້',
-      refId : '7',
-      createDate: '2022/03/15',
-      doEn: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf',
-      doLa: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf'
-    },
-    {
-      doId : '1',
-      dodsc: 'ແຊັມ ລາວລີກ 1 ປີ 2022 ຈະໄດ້ຮັບຂັນແຊ້ມ ພ້ອມເງິນລາງວັນ 300 ລ້ານກີບ, ຈະບໍ່ມີທີມຕົກຊັ້ນປີນີ້',
-      refId : '6',
-      createDate: '2022/03/15',
-      doEn: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf',
-      doLa: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf'
-    },
-    {
-      doId : '1',
-      dodsc: 'ແຊັມ ລາວລີກ 1 ປີ 2022 ຈະໄດ້ຮັບຂັນແຊ້ມ ພ້ອມເງິນລາງວັນ 300 ລ້ານກີບ, ຈະບໍ່ມີທີມຕົກຊັ້ນປີນີ້',
-      refId : '5',
-      createDate: '2022/03/15',
-      doEn: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf',
-      doLa: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf'
-    },
-    {
-      doId : '1',
-      dodsc: 'ແຊັມ ລາວລີກ 1 ປີ 2022 ຈະໄດ້ຮັບຂັນແຊ້ມ ພ້ອມເງິນລາງວັນ 300 ລ້ານກີບ, ຈະບໍ່ມີທີມຕົກຊັ້ນປີນີ້',
-      refId : '4',
-      createDate: '2022/03/15',
-      doEn: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf',
-      doLa: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf'
-    },
-    {
-      doId : '1',
-      dodsc: 'ແຊັມ ລາວລີກ 1 ປີ 2022 ຈະໄດ້ຮັບຂັນແຊ້ມ ພ້ອມເງິນລາງວັນ 300 ລ້ານກີບ, ຈະບໍ່ມີທີມຕົກຊັ້ນປີນີ້',
-      refId : '3',
-      createDate: '2022/03/15',
-      doEn: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf',
-      doLa: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf'
-    },
-    {
-      doId : '1',
-      dodsc: 'ແຊັມ ລາວລີກ 1 ປີ 2022 ຈະໄດ້ຮັບຂັນແຊ້ມ ພ້ອມເງິນລາງວັນ 300 ລ້ານກີບ, ຈະບໍ່ມີທີມຕົກຊັ້ນປີນີ້',
-      refId : '2',
-      createDate: '2022/03/15',
-      doEn: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf',
-      doLa: '../../../assets/doc/Final-IP-Law-28-03-2018-Copy-ປັບມາດຕາ-121122-Copy.pdf'
-    },
-  ];
+  searchValue = '';
+  jsonData: {
+    createDate: string;
+    doc: string;
+    docId: string;
+    dsc: string;
+    fileEn: string;
+    fileLa: string;
+    refId: string;
+    title: string;
+  }[] = [];
+
+  masterData: {
+    createDate: string;
+    doc: string;
+    docId: string;
+    dsc: string;
+    fileEn: string;
+    fileLa: string;
+    refId: string;
+    title: string;
+  }[] = [];
+
   url = '';
   constructor(
     private route: ActivatedRoute,
@@ -158,7 +59,7 @@ export class DocumentsComponent implements OnInit {
     const modal = {}
     this.api.loadDoc(modal).subscribe(res => {
       this.jsonData = res.data;
-      
+      this.masterData = res.data;
     })
   }
 
@@ -214,6 +115,17 @@ export class DocumentsComponent implements OnInit {
 
     return '';
       
+  }
+
+  searchFunc(): void {
+    if (this.searchValue !== '') {
+      const searchData = this.masterData.filter(f => f.title.includes(this.searchValue.toLocaleLowerCase())
+      || f.dsc.includes(this.searchValue.toLocaleLowerCase())
+      );
+      this.jsonData = searchData;
+    } else {
+      this.jsonData = this.masterData;
+    }
   }
 
   

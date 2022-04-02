@@ -6,6 +6,13 @@
 
 
     <div class="content" style="margin: 1rem 0;">
+
+      <div class="search-wrapper">
+        <button (click)="searchFunc()">ຄົນຫາ</button>
+        <input type="text" placeholder="ຄົນຫາ" [(ngModel)]="searchValue" (keyup.enter)="searchFunc()">
+      </div>
+
+      
       <div class="table-wrapper" style="width: 1340px" *ngIf="id != 8">
         <table>
           <tr>

@@ -19,6 +19,27 @@
     max-width: 350px;
     margin-bottom: 0.5rem;
 
+
+    .search-wrapper {
+      display: flex;
+      flex-direction: row-reverse;
+      margin: 1rem 0;
+  
+      width: 1340px;
+      input {
+        width: 300px;
+        height: 35px;
+        padding: 0 5px;
+        border: 1px solid gainsboro;
+        outline: none;
+      }
+      button {
+        outline: none;
+        height: 35px;
+        border: 1px solid gainsboro;
+        padding: 0 10px;
+      }
+    }
     #hiden {
       width: 900px;
       margin: 0 auto;

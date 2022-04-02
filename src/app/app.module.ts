@@ -29,10 +29,10 @@ import { OrgDataModule } from './share-component/org-data/org-data.module';
     DonorFlagComponent,
     CategoryListComponent,
     CategoryDetailComponent,
-    StatisticsComponent,
+    // StatisticsComponent,
     MapComponent,
     TeaproductsComponent,
-    SitelinksComponent,
+    // SitelinksComponent,
     ContactComponent,
 
 

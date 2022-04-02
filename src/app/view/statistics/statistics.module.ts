@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { StatisticsRoutingModule } from './statistics-routing.module';
 import { StatisticsComponent } from './statistics.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [StatisticsComponent],
   imports: [
     CommonModule,
-    StatisticsRoutingModule
+    StatisticsRoutingModule,
+    FormsModule
   ]
 })
 export class StatisticsModule { }
