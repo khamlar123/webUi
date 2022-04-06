@@ -7,7 +7,7 @@
         <div class="img-wrapper">
           <div class="slider-wrapper">
             <ng-container *ngFor="let item of bannerRef1List; let i = index">
-              <a href="" [routerLink]="'/category-list'" target="blink"><img *ngIf="imgIndex === i"
+              <a href="" [[routerLink]="['/news-list', 2]"><img *ngIf="imgIndex === i"
                   src="{{enpoin + getImgUrl(item.imgUrl)}}" alt=""></a>
             </ng-container>
 

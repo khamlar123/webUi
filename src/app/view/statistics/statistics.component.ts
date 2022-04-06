@@ -95,7 +95,7 @@ export class StatisticsComponent implements OnInit {
 
   getImgUrl(url: string):string{     
     let str = JSON.parse(url)[0];
-    return this.url + str.slice(8, str.length);
+    return this.url.split('/api/')[0] + str.slice(7, str.length);
   }
 
   searchFunc(): void {

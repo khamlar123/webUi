@@ -7,7 +7,7 @@
     width: 1366px;
     margin: 0.5rem 0;
     margin-bottom: 1.5rem;
-    height: calc(100vh - 518px);
+    min-height: calc(100vh - 518px);
     .img-wrapper {
       display: flex;
       justify-content: center;

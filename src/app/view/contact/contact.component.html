@@ -14,9 +14,13 @@
             <li>ເບີແຟັກ: 0085686 212 053</li>
             <li>ເບີມືຖື: 0085620 54605888, 29157133, 55755789</li> -->
 
-            <p *ngFor="let item of jsonDaTa">
-              {{item.dpcTitle}}: {{item.dpcDsc}}
-            </p>
+            <ng-container *ngFor="let item of jsonDaTa">
+              <label for="">{{item.dpcTitle}}:</label>
+
+              <p  style="white-space: pre-wrap; margin-top: 1rem;">
+                 {{item.dpcDsc}}
+              </p>
+            </ng-container>
 
 
 
