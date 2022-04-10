@@ -19,4 +19,10 @@ export class ApiService {
   public loadStructures(data: any): Observable<any> {
     return this.http.post<any>(this.service.baseURL + 'structures.api.php', data, { headers: this.service.setHeader('listTreeStructures') });
   }
+
+  public loadCouncil(data: any): Observable<any> {
+    return this.http.post<any>(this.service.baseURL + 'council.api.php', data, { headers: this.service.setHeader('listAllCouncil') });
+  }
+
+  
 }

@@ -4,21 +4,12 @@
   </div>
   <div class="product-wrapper">
     <div class="git-item">
-      <div class="item">
+
+      <!-- <div class="item">
         <div class="item-title">
           <span class="material-icons">place</span>
           <h4>ອັບເດດສີນຄ້າແຂວງຜົ້ງສາລີ</h4>
         </div>
-        <!-- <div class="item-contetn" *ngFor="let item of noticeList">
-              <div class="box1">
-                <img src="http://216.127.173.163/{{item.imgUrl[0]}}" alt="">
-              </div>
-
-              <a href="http://216.127.173.163/{{item.imgUrl[0]}}" target="blink" class="box2">
-                <label>{{item.title}}</label>
-                <p style="font-weight: normal;">{{item.dsc}}</p>
-              </a>
-          </div> -->
         <div class="table-wrapper">
           <table>
             <tr>
@@ -41,16 +32,6 @@
           <span class="material-icons">place</span>
           <h4>ອັບເດດສີນຄ້າແຂວງອຸດົມໄຊ</h4>
         </div>
-        <!-- <div class="item-contetn" *ngFor="let item of noticeList2">
-          <div class="box1">
-            <img src="http://216.127.173.163/{{item.imgUrl[0]}}" alt="">
-          </div>
-
-          <a href="http://216.127.173.163/{{item.imgUrl[0]}}" target="blink" class="box2">
-            <label>{{item.title}}</label>
-            <p>{{item.dsc}}</p>
-          </a>
-        </div> -->
 
         <div class="table-wrapper">
           <table>
@@ -75,16 +56,6 @@
           <span class="material-icons">place</span>
           <h4>ອັບເດດສີນຄ້າແຂວງຫຼວງນ້ຳທາ</h4>
         </div>
-        <!-- <div class="item-contetn" *ngFor="let item of noticeList3">
-          <div class="box1">
-            <img src="http://216.127.173.163/{{item.imgUrl[0]}}" alt="">
-          </div>
-
-          <a href="http://216.127.173.163/{{item.imgUrl[0]}}" target="blink" class="box2">
-            <label>{{item.title}}</label>
-            <p>{{item.dsc}}</p>
-          </a>
-        </div> -->
 
         <div class="table-wrapper">
           <table>
@@ -101,11 +72,29 @@
             </tr>
           </table>
         </div>
+      </div> -->
+
+
+      <div class="table-wrapper">
+        <table>
+          <tr>
+            <th>ລໍາດັບ</th>
+            <th>ຫົວຂໍ້ອັບເດດສີນຄ້າ</th>
+            <th>ລາຍລະອຽດ</th>
+            <th>ລາຄາ</th>
+            <th>ແຂວງ</th>
+          </tr>
+          <tr *ngFor="let item of getData();let i = index">
+            <td>{{i+1}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.dsc}}</td>
+            <td>{{item.price | currency: ' ':'':'1.0-0'}}</td>
+            <td>{{item.province}}</td>
+          </tr>
+        </table>
+
+     
       </div>
-
-
-
     </div>
-
   </div>
 </div>

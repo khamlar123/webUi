@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { ServiceService } from 'src/app/service.service';
 import { NoticeApiService } from './api/notice-api.service';
 
 @Component({
@@ -12,18 +13,46 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
 
 
   public loadNoticeSubscription: Subscription | undefined;
-  public noticeList: any[] = [];
-  public noticeList2: any[] = [];
-  public noticeList3: any[] = [];
+  public noticeList: {
+    dsc: string;
+    gen_id: string;
+    imgUrl: string;
+    notice_id: string;
+    price: string;
+    title: string;
+    web_id: string;
+    province: string;
+  }[] = [];
+  public noticeList2: {
+    dsc: string;
+    gen_id: string;
+    imgUrl: string;
+    notice_id: string;
+    price: string;
+    title: string;
+    web_id: string;
+    province: string;
+  }[] = [];
+  public noticeList3: {
+    dsc: string;
+    gen_id: string;
+    imgUrl: string;
+    notice_id: string;
+    price: string;
+    title: string;
+    web_id: string;
+    province: string;
+  }[] = [];
   public imgUrl: any[] = [];
   public imageList: any[] = [];
 
-  constructor(private noticeApiService: NoticeApiService) { }
+  constructor(private noticeApiService: NoticeApiService, private main : ServiceService) { }
 
   ngOnInit(): void {
     this.loadNotice();
     this.loadNotice2();
     this.loadNotice3();
+    this.getData();
   }
 
   ngOnDestroy(): void {
@@ -87,6 +116,27 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
         }
       }
     });
+  }
+
+  getData(): any[]{
+    console.log(this.main);
+    
+    const newList:any[] = [];
+    this.noticeList.slice(0, 3).forEach(e => {
+      e.province = 'ແຂວງຜົ້ງສາລີ';
+        newList.push(e);
+    });
+
+    this.noticeList2.slice(0, 3).forEach(e => {
+      e.province = 'ແຂວງອຸດົມໄຊ';
+      newList.push(e);
+  });
+
+    this.noticeList3.slice(0, 3).forEach(e => {
+      e.province = 'ແຂວງຫຼວງນ້ຳທາ';
+      newList.push(e);
+  });    
+    return newList;
   }
 
 }

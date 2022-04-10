@@ -17,8 +17,19 @@
       <table>
         <tr>
           <th style="width: 80px;">ລ/ດ</th>
-          <th style="width: 200px;">ວັນທີ</th>
-          <th>ໂຄງການ</th>
+          <th>ຊື່ໂຄງການ</th>
+          <th>ປະເພດໂຄງການ</th>
+          <th>ເປົ້າໝາຍ</th>
+          <th>ຜູ້ໄດ້ຮັບທືນ</th>
+          <th>ຜູ້ຈັດຕັ້ງປະຕິບັດ</th>
+          <th>ໄລຍະເວລາໂຄງການ</th>
+          <th>ມູນຄ່າທັງໝົດ</th>
+          <th>ງົບປະມານຈາກ EIF</th>
+          <th>ງົບປະມານຈາກແຫຼ່ງອື່ນ</th>
+          <th style="width: 140px;">ວັນທີອັບເດດຫຼ້າສຸດ</th>
+
+
+
           <th style="width: 100px;">ດາວໂລດ</th>
 
 
@@ -26,12 +37,16 @@
         </tr>
         <tr *ngFor="let item of getItems();let i = index">
           <td>{{i+1}}</td>
+          <td>{{item.title}}</td>
+          <td>{{item.assisType}}</td>
+          <td>{{item.dsc}}</td>
+          <td>{{item.recipient}}</td>
+          <td>{{item.agent}}</td>
+          <td>{{item.time}}</td>
+          <td>{{item.totalPrice}}</td>
+          <td>{{item.budgetEIF}}</td>
+          <td>{{item.budgetAnother}}</td>
           <td>{{item.createDate}}</td>
-          <td>
-            <p id="hiden">
-              {{item.dsc}}
-            </p>
-          </td>
           <td> 
             <a href="{{ getImgUrl(item.fileEn) }}" target="blank"> ລາວ</a> | <a href="{{getImgUrl(item.fileLa)}}" target="blank">
               ອັງກິດ</a>

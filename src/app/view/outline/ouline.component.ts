@@ -52,17 +52,26 @@ export class OulineComponent implements OnInit {
     children: [],
   };
 
+  CouncilList:{
+    cou_id: string;
+    createDate: string;
+    doc: string;
+    title: string;
+  }[] = [];
+
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.loadStaff();
     this.loadOrgList1();
     this.loadOrgList2();
+    this.loadCouncil();
     this.routes.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.id = Number(this.route.snapshot.paramMap.get('id'));
         this.loadStaff();
         this.loadOrgList1();
         this.loadOrgList2();
+        this.loadCouncil();
       }
 
     });
@@ -78,6 +87,13 @@ export class OulineComponent implements OnInit {
       this.masterData = res.data;
     })
 
+  }
+
+  loadCouncil(): void{
+    this.api.loadCouncil('').subscribe(res => {
+     
+      this.CouncilList = res.data
+    })
   }
 
   searchFunc(): void {

@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="doc-wrapper card">
+  <div class="doc-wrapper card" style="margin-top: 1rem">
     <div class="title">
       <h3>ແຜນພັດທະນາ</h3>
     </div>
@@ -14,11 +14,11 @@
       <div class="table-wrapper" style="width: 1340px" >
         <table>
           <tr>
-            <th style="width: 80px;">ລ/ດ</th>
-            <th>ຊື່</th>
+            <th style="min-width: 50px;">ລ/ດ</th>
+            <th style="min-width: 140px">ຊື່</th>
             <th>ລາຍລະອຽດ</th>
-            <th style="width: 150px;">ວັນທີ</th>
-            <th style="width: 150px;">ດາວໂລດ</th>
+            <th style="min-width: 140px;">ວັນທີອັບເດດຫຼ້າສຸດ</th>
+            <th style="min-width: 80px;">ດາວໂລດ</th>
           </tr>
           <tr *ngFor="let item of getItems();let i = index">
             <td>{{i+1}}</td>
@@ -29,7 +29,7 @@
               </p>
             </td>
             <td>{{item.createDate}}</td>
-            <td>      <a href="{{ getImgUrl(item.fileEn) }}" target="blank"> ລາວ</a> | <a href="{{getImgUrl(item.fileLa)}}" target="blank">
+            <td>      <a href="{{ getImgUrl(item.fileLa) }}" target="blank"> ລາວ</a> | <a href="{{getImgUrl(item.fileEn)}}" target="blank">
               ອັງກິດ</a>
             </td>
           </tr>

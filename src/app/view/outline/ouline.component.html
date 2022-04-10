@@ -1,8 +1,8 @@
-<div class="container card" style="margin-top: -0.1rem;">
+<div class="container card" style="margin-top: 1rem">
   <div class="ouline-wrapper">
 
     <div class="title" style="margin-bottom: 1rem;">
-      <h3>{{(id === 1)? 'ກ່ຽວ​ກັບ​ສະ​ພາ (ລາຍ​ລະ​ອຽດ, ໂຄງ​ຮ່າງ​ການ​ຈັດ​ຕັ້ງ, ເບີ​ໂທ​ຕິດ​ຕໍ່)': 'ສະມາຊິກ' }}</h3>
+      <h3>{{(id === 1)? 'ກ່ຽວ​ກັບ​ສະ​ພາ (ລາຍ​ລະ​ອຽດ, ໂຄງ​ຮ່າງ​ການ​ຈັດ​ຕັ້ງ, ເບີ​ໂທ​ຕິດ​ຕໍ່)':(id === 2)? 'ສະມາຊິກ': 'ກ່ຽວກັບສະພາ' }}</h3>
     </div>
 
     <div class="kong-sang" *ngIf="id === 1">
@@ -49,6 +49,18 @@
       </div>
     </div>
 
+
+    <div class="kong-sang" *ngIf="id === 3">
+       <div class="content" style="margin-left: 1rem;">
+        <ng-container *ngFor="let item of CouncilList">
+          <label for="">{{item.title}}:</label>
+
+          <p  style="white-space: pre-wrap; margin-top: 1rem;">
+             {{item.doc}}
+          </p>
+        </ng-container>
+       </div>
+    </div>
 
   </div>
 </div>

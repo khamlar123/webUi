@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="doc-wrapper card">
+  <div class="doc-wrapper card" style="margin-top: 1rem">
     <div class="title">
       <h3>{{getname()}}</h3>
     </div>
@@ -17,9 +17,9 @@
         <table>
           <tr>
             <th style="width: 80px;">ລ/ດ</th>
-            <th>ຊື່</th>
+            <th style="min-width: 150px;">ຊື່</th>
             <th>ລາຍລະອຽດ</th>
-            <th style="width: 150px;">ວັນທີ</th>
+            <th style="min-width: 140px;">ວັນທີອັບເດດຫຼ້າສຸດ</th>
             <th style="width: 150px;">ດາວໂລດ</th>
           </tr>
           <tr *ngFor="let item of getData();let i = index">

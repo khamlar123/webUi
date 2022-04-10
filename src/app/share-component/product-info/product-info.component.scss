@@ -15,8 +15,8 @@
   .product-wrapper {
     background: white;
     .git-item {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      // display: grid;
+      // grid-template-columns: 1fr 1fr 1fr;
       gap: 1.5rem;
       padding: 1rem 1.5rem;
       .item {
@@ -75,13 +75,21 @@
       }
 
       .table-wrapper {
+        
         tr {
+          height: 35px;
+        
           td {
+            border: none;
             padding: 0 10px;
             img {
               width: 70px;
               height: 100px;
             }
+          }
+
+          th{
+            border: none;
           }
           .dsc {
             a {
