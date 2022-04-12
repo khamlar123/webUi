@@ -1,26 +1,46 @@
 <div class="container">
   <ng-container *ngFor="let item of modal">
-    <h1 class="level-1 rectangle" (click)="getDetail(item)">{{item.name}}</h1>
+    <h1 class="level-1 rectangle" (click)="getDetail(item)" style="display: flex; align-items: center;">
+      <div class="img-warp">
+        <img src="../../../assets/user/user1.png" alt="">
+      </div>
+      {{item.name}}
+    </h1>
     <ol class="level-2-wrapper" *ngIf="item.children.length > 0">
 
       <ng-container *ngFor="let children1 of item.children">
         <li>
-          <h2 class="level-2 rectangle" (click)="getDetail(children1)">{{children1.name}}</h2>
+          <h2 class="level-2 rectangle" (click)="getDetail(children1)" style="display: flex; align-items: center;">
+            <div class="img-warp">
+              <img src="../../../assets/user/user1.png" alt="">
+            </div>
+            {{children1.name}}
+          </h2>
 
-          <ol class="level-3-wrapper" *ngIf="children1.children.length > 0">
-            <li>
-              <h3 class="level-3 rectangle" *ngFor="let children2 of children1.children" (click)="getDetail(children2)">
-                {{children2.name}}</h3>
+          <ng-container *ngIf="children1.children.length > 0">
+            <ol class="level-3-wrapper">
+              <li *ngFor="let children2 of children1.children">
+                <h3 class="level-3 rectangle" style=" display: flex;" (click)="getDetail(children2)">
+                  <!-- <div class="img-warp" style="width: 40px; height: 40px;">
+                    <img src="../../../assets/user/user1.png" alt="">
+                  </div> -->
+                  {{children2.name}}
+                </h3>
 
-              <!-- <ol class="level-4-wrapper" *ngIf="children2.children">
-                <li *ngFor="let children3 of children2.children">
-                  <h4 class="level-4 rectangle">{{children3.name}}</h4>
-                </li>
+                <!-- <ol class="level-4-wrapper" *ngIf="children2.children">
+                  <li *ngFor="let children3 of children2.children">
+                    <h4 class="level-4 rectangle">{{children3.name}}</h4>
+                  </li>
 
-              </ol> -->
-            </li>
+                </ol> -->
+              </li>
 
-          </ol>
+
+            </ol>
+          </ng-container>
+
+
+
         </li>
       </ng-container>
     </ol>
