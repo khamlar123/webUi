@@ -1,5 +1,5 @@
 <!-- https://www.cssscript.com/semantic-hierarchy-tree-treeflex/ -->
-<div class="container">
+<!-- <div class="container">
   <ng-container *ngFor="let item of modal">
     <h1 class="level-1 rectangle" (click)="getDetail(item)" style="display: flex; align-items: center;">
       <div class="img-warp">
@@ -22,18 +22,11 @@
             <ol class="level-3-wrapper">
               <li *ngFor="let children2 of children1.children">
                 <h3 class="level-3 rectangle" style=" display: flex;" (click)="getDetail(children2)">
-                  <!-- <div class="img-warp" style="width: 40px; height: 40px;">
-                    <img src="../../../assets/user/user1.png" alt="">
-                  </div> -->
+        
                   {{children2.name}}
                 </h3>
 
-                <!-- <ol class="level-4-wrapper" *ngIf="children2.children">
-                  <li *ngFor="let children3 of children2.children">
-                    <h4 class="level-4 rectangle">{{children3.name}}</h4>
-                  </li>
-
-                </ol> -->
+        
               </li>
 
 
@@ -62,6 +55,93 @@
           close
         </span>
       </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="tf-tree example">
+  <ul>
+    <li *ngFor="let item of modal">
+      <span class="tf-nc" (click)="getDetail(item)"  style="display: flex; align-items: center; flex-direction: column;">
+        <div class="img-wrapper">
+          <img src="{{getImgUrl(item.imgUrl)}}" alt="super deal">
+        </div>
+        {{item.name}}
+      </span>
+
+
+      <ul *ngIf="item.children.length > 0">
+
+        <li *ngFor="let children1 of item.children">
+          <span class="tf-nc" (click)="getDetail(children1)"  style="display: flex; align-items: center; flex-direction: column;">
+            <div class="img-wrapper">
+              <img src="{{(getImgUrl(children1.imgUrl))? getImgUrl(children1.imgUrl) : '/assets/user/user1.png'}}" alt="super deal">
+            </div>
+            {{children1.name}}
+          </span>
+
+          <ul *ngIf="children1.children.length > 0">
+
+            <li *ngFor="let children2 of children1.children">
+              <span class="tf-nc" (click)="getDetail(children2)"  style="display: flex; align-items: center; flex-direction: column;">
+                <div class="img-wrapper">
+                  <img src="{{(getImgUrl(children2.imgUrl))? getImgUrl(children2.imgUrl) : '/assets/user/user1.png'}}" alt="super deal">
+                </div>
+                {{children2.name}}
+              </span>
+
+              <ul *ngIf="children2.children">
+
+                <li *ngFor="let children3 of children2.children">
+                  <span class="tf-nc" (click)="getDetail(children3)" style="display: flex; align-items: center; flex-direction: column;">
+                    <div class="img-wrapper">
+                      <img src="{{(getImgUrl(children3.imgUrl))? getImgUrl(children3.imgUrl) : '/assets/user/user1.png'}}" alt="super deal">
+                    </div>
+                    {{children3.name}}
+                  </span>
+
+                  <ul *ngIf="children3.children">
+
+                    <li *ngFor="let children4 of children3.children">
+                      <span class="tf-nc" (click)="getDetail(children4)" style="display: flex; align-items: center; flex-direction: column;">
+                        <div class="img-wrapper">
+                          <img src="{{(getImgUrl(children4.imgUrl))? getImgUrl(children4.imgUrl) : '/assets/user/user1.png'}}" alt="super deal">
+                        </div>
+                        {{children4.name}}
+                      </span>
+                    </li>
+    
+                  </ul>
+                </li>
+
+              </ul>
+            </li>
+
+          </ul>
+
+        </li>
+
+      </ul>
+
+    </li>
+  </ul>
+</div>
+
+<div class="modal-container" *ngIf="detailData">
+  <div class="content card">
+    <div class="img-warp">
+      <img src="{{(getImgUrl(detailData.imgUrl))? getImgUrl(detailData.imgUrl) : '/assets/user/user1.png'}}" alt="super deal">
+    </div>
+    <div class="info">
+      <p>{{detailData.name}}</p>
+      <p>{{detailData.type}}</p>
+      <p>{{detailData.dsc}}</p>
+    </div>
+
+    <div class="colse">
+      <span class="material-icons" (click)="close()">
+        close
+      </span>
     </div>
   </div>
 </div>
