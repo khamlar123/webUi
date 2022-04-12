@@ -11,12 +11,11 @@ import { DonorFlagComponent } from './share-component/donor-flag/donor-flag.comp
 import { HttpClientModule } from '@angular/common/http';
 import { CategoryListComponent } from './view/category-list/category-list.component';
 import { CategoryDetailComponent } from './view/category-detail/category-detail.component';
-import { StatisticsComponent } from './view/statistics/statistics.component';
 import { MapComponent } from './view/map/map.component';
 import { TeaproductsComponent } from './view/teaproducts/teaproducts.component';
-import { SitelinksComponent } from './view/sitelinks/sitelinks.component';
 import { ContactComponent } from './view/contact/contact.component';
 import { OrgDataModule } from './share-component/org-data/org-data.module';
+
 
 
 @NgModule({
@@ -34,6 +33,7 @@ import { OrgDataModule } from './share-component/org-data/org-data.module';
     TeaproductsComponent,
     // SitelinksComponent,
     ContactComponent,
+
 
 
   ],

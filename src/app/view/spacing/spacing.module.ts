@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SpacingRoutingModule } from './spacing-routing.module';
 import { SpacingComponent } from './spacing.component';
 import { OrgDataModule } from 'src/app/share-component/org-data/org-data.module';
+import { Org2Module } from 'src/app/share-component/org2/org2.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { OrgDataModule } from 'src/app/share-component/org-data/org-data.module'
   imports: [
     CommonModule,
     SpacingRoutingModule,
-    OrgDataModule
+    /*   OrgDataModule, */
+    Org2Module
   ]
 })
 export class SpacingModule { }

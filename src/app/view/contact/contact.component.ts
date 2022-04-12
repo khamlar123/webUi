@@ -19,13 +19,11 @@ export class ContactComponent implements OnInit {
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
-    const moddal ={
-
-    }
+    const moddal = {};
     this.subs.sink = this.api.loadContact(moddal).subscribe(res => {
       this.jsonDaTa = res.data;
 
-    })
+    });
   }
 
 }

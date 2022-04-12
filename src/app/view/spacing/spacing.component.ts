@@ -8,22 +8,22 @@ import { OrgData } from 'angular-org-chart/src/app/modules/org-chart/orgData';
 })
 export class SpacingComponent implements OnInit {
   org1 = {
-    name: "ທ່ານ ທະນູຄໍາ ປິດຈະວົງ",
+    name: 'ທ່ານ ທະນູຄໍາ ປິດຈະວົງ',
     type: '(ຫົວໜ້າພະແນກ)',
     children: [
       {
-        name: "",
+        name: '',
         type: '',
         children: [
           {
-            name: "ຂະແໜງກວດກາລົດ",
+            name: 'ຂະແໜງກວດກາລົດ',
             type: '',
             children: [
 
             ]
           },
           {
-            name: "ຂະແໜງນໍາເຂົ້າແລະສົ່ງອອກ",
+            name: 'ຂະແໜງນໍາເຂົ້າແລະສົ່ງອອກ',
             type: '',
             children: [
 
@@ -32,25 +32,25 @@ export class SpacingComponent implements OnInit {
         ]
       },
       {
-        name: "ທ່ານ ຄໍາເຫຼັກ ແສນທະພູມ",
+        name: 'ທ່ານ ຄໍາເຫຼັກ ແສນທະພູມ',
         type: '(ຮອງຫົວໜ້າພະແນກ)',
         children: [
           {
-            name: "ຫ້ອງການສັງລວມບໍລິຫານແລະຈັດຕັ້ງພະນັກງານ",
+            name: 'ຫ້ອງການສັງລວມບໍລິຫານແລະຈັດຕັ້ງພະນັກງານ',
             type: '',
             children: [
 
             ]
           },
           {
-            name: "ຂະແໜງການແລະການຮວມມື",
+            name: 'ຂະແໜງການແລະການຮວມມື',
             type: '',
             children: [
 
             ]
           },
           {
-            name: "ຂະແໜງສົ່ງເສີມວິສາຫະກິດຂະໜາດນ້ອຍແລະກາງແລະການຄ້າ",
+            name: 'ຂະແໜງສົ່ງເສີມວິສາຫະກິດຂະໜາດນ້ອຍແລະກາງແລະການຄ້າ',
             type: '',
             children: [
 
@@ -59,17 +59,17 @@ export class SpacingComponent implements OnInit {
         ]
       },
       {
-        name: "ທ່ານ ບຸນລົງ ຫົງຄໍາ",
+        name: 'ທ່ານ ບຸນລົງ ຫົງຄໍາ',
         type: '(ຮອງຫົວໜ້າພະແນກ)',
         children: [
           {
-            name: "ຂະແໜງການຄ້າພາຍໃນ",
+            name: 'ຂະແໜງການຄ້າພາຍໃນ',
             type: '',
             children: [
             ]
           },
           {
-            name: "ຂະແໜງທະບຽນແລະຄຸມຄອງວິສາຫະກິດ",
+            name: 'ຂະແໜງທະບຽນແລະຄຸມຄອງວິສາຫະກິດ',
             type: '',
             children: [
 
@@ -79,18 +79,18 @@ export class SpacingComponent implements OnInit {
         ]
       },
       {
-        name: "ທ່ານ ອຸດອນ ມະນີຈັນ",
+        name: 'ທ່ານ ອຸດອນ ມະນີຈັນ',
         type: '(ຮອງຫົວໜ້າພະແນກ)',
         children: [
           {
-            name: "ຂະແໜງຊັບສີນທາງປັນຍາ,ມາດຕະຖານແລະວັດແທກ",
+            name: 'ຂະແໜງຊັບສີນທາງປັນຍາ,ມາດຕະຖານແລະວັດແທກ',
             type: '',
             children: [
 
             ]
           },
           {
-            name: "ຂະແໜງອຸສາຫະກໍາແລະຫັດທະກໍາ",
+            name: 'ຂະແໜງອຸສາຫະກໍາແລະຫັດທະກໍາ',
             type: '',
             children: [
 
@@ -99,61 +99,81 @@ export class SpacingComponent implements OnInit {
         ]
       },
     ]
-  }
+  };
 
   masterOrgList: OrgData = {
     name: '',
     type: '',
     children: [],
   };
+
+  newData: any[] = [];
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
-    this.loadOrgList();    
+    this.loadOrgList();
   }
 
-  loadOrgList(): void{
-    this.api.loadStructures('').subscribe(res => {          
-      const map = res.data.filter((f: { org_id: string; }) => f.org_id === "1").map((m:OrgData) => {return {
-        name: m.name,
-        type : m.type,
-        children: m.children.map(e => { return{
-            name: e.name,
-            type : e.type,
-            children: (e.children)? e.children.map(ee => { return {
-                 name: ee.name, 
-                 type:ee.type, 
-                 children:(ee.children)? ee.children.map(eee => {return {
-                   name: eee.name,
-                   type:eee.type,
-                   children: (eee.children)? eee.children.map(eeee => {return {
-                     name: eeee.name,
-                     type: eeee.type,
-                     children: (eeee.children)? eeee.children.map(eeeee => {return {
-                       name: eeeee.name,
-                       type: eeeee.type,
-                       children: (eeeee.children)? eeeee.children.map(eeeeee => {return {
-                         name: eeeeee.name,
-                         type: eeeeee.type,
-                         children: (eeeeee.children)? eeeeee.children.map(eeeeeee => {return {
-                           name: eeeeeee.name,
-                           type: eeeeeee.type,
-                           children: (eeeeeee.children)? eeeeeee.children.map(eeeeeeee => {return {
-                             name: eeeeeeee.name,
-                             type: eeeeeeee.type,
-                             children: (eeeeeeee.children)? eeeeeeee.children : []
-                           }}) : [] 
-                         }}) : []
-                       }}) : []
-                     }}) : []
-                   }}) : []
-                  }}) : [] 
-                }}): []
-          }
-        })
-      }});
-     this.masterOrgList = map[0];
-    })
+  loadOrgList(): void {
+    this.api.loadStructures('').subscribe(res => {
+      this.newData = res.data.filter((f: { org_id: string; }) => f.org_id === '1');
+      const map = res.data.filter((f: { org_id: string; }) => f.org_id === '1').map((m: OrgData) => {
+        return {
+          name: m.name,
+          type: m.type,
+          children: m.children.map(e => {
+            return {
+              name: e.name,
+              type: e.type,
+              children: (e.children) ? e.children.map(ee => {
+                return {
+                  name: ee.name,
+                  type: ee.type,
+                  children: (ee.children) ? ee.children.map(eee => {
+                    return {
+                      name: eee.name,
+                      type: eee.type,
+                      children: (eee.children) ? eee.children.map(eeee => {
+                        return {
+                          name: eeee.name,
+                          type: eeee.type,
+                          children: (eeee.children) ? eeee.children.map(eeeee => {
+                            return {
+                              name: eeeee.name,
+                              type: eeeee.type,
+                              children: (eeeee.children) ? eeeee.children.map(eeeeee => {
+                                return {
+                                  name: eeeeee.name,
+                                  type: eeeeee.type,
+                                  children: (eeeeee.children) ? eeeeee.children.map(eeeeeee => {
+                                    return {
+                                      name: eeeeeee.name,
+                                      type: eeeeeee.type,
+                                      children: (eeeeeee.children) ? eeeeeee.children.map(eeeeeeee => {
+                                        return {
+                                          name: eeeeeeee.name,
+                                          type: eeeeeeee.type,
+                                          children: (eeeeeeee.children) ? eeeeeeee.children : []
+                                        };
+                                      }) : []
+                                    };
+                                  }) : []
+                                };
+                              }) : []
+                            };
+                          }) : []
+                        };
+                      }) : []
+                    };
+                  }) : []
+                };
+              }) : []
+            };
+          })
+        };
+      });
+      this.masterOrgList = map[0];
+    });
   }
 
 

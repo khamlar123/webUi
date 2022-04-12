@@ -137,3 +137,20 @@ input {
     font-family: "Roboto", sans-serif;
   }
 }
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  // background: rgba(0, 0, 0, 0.9);
+  background: #3333;
+  z-index: 22;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 1rem;
+}
