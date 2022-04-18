@@ -62,7 +62,7 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
   public loadNotice() {
     const setParams: any = {
       "page": 1,
-      "limit": 3,
+      "limit": 10,
       "keyword": ""
     }
     this.loadNoticeSubscription = this.noticeApiService.loadNotice(setParams).subscribe(res => {
@@ -81,7 +81,7 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
   public loadNotice2() {
     const setParams: any = {
       "page": 1,
-      "limit": 3,
+      "limit": 10,
       "keyword": ""
     }
     this.loadNoticeSubscription = this.noticeApiService.loadNotice2(setParams).subscribe(res => {
@@ -102,7 +102,7 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
   public loadNotice3() {
     const setParams: any = {
       "page": 1,
-      "limit": 3,
+      "limit": 10,
       "keyword": ""
     }
     this.loadNoticeSubscription = this.noticeApiService.loadNotice3(setParams).subscribe(res => {

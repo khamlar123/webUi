@@ -1,0 +1,74 @@
+<div class="tf-tree example">
+  <ul>
+    <li *ngFor="let item of modal">
+      <span class="tf-nc"   style="display: flex; align-items: center; flex-direction: column; text-align: center;">
+        {{item.name}}
+      </span>
+
+
+      <ul *ngIf="item.children">
+
+        <li *ngFor="let children1 of item.children">
+          <span class="tf-nc"   style="display: flex; align-items: center; flex-direction: column; text-align: center;">
+       
+            {{children1.name}}
+          </span>
+
+          <ul *ngIf="children1.children">
+
+            <li *ngFor="let children2 of children1.children">
+              <span class="tf-nc"   style="display: flex; align-items: center; flex-direction: column; text-align: center;">
+                {{children2.name}}
+              </span>
+
+              <ul *ngIf="children2.children">
+
+                <li *ngFor="let children3 of children2.children">
+                  <span class="tf-nc"  style="display: flex; align-items: center; flex-direction: column; text-align: center;">
+               
+                    {{children3.name}}
+                  </span>
+
+                  <ul *ngIf="children3.children">
+
+                    <li *ngFor="let children4 of children3.children">
+                      <span class="tf-nc" style="display: flex; align-items: center; flex-direction: column; text-align: center;">
+        
+                        {{children4.name}}
+                      </span>
+                    </li>
+    
+                  </ul>
+                </li>
+
+              </ul>
+            </li>
+
+          </ul>
+
+        </li>
+
+      </ul>
+
+    </li>
+  </ul>
+</div>
+
+<div class="modal-container" *ngIf="detailData">
+  <div class="content card">
+    <div class="img-warp">
+      <img src="{{(getImgUrl(detailData.imgUrl))? getImgUrl(detailData.imgUrl) : '/assets/user/user1.png'}}" alt="super deal">
+    </div>
+    <div class="info">
+      <p>{{detailData.name}}</p>
+      <p>{{detailData.type}}</p>
+      <p>{{detailData.dsc}}</p>
+    </div>
+
+    <div class="colse">
+      <span class="material-icons" (click)="close()">
+        close
+      </span>
+    </div>
+  </div>
+</div>

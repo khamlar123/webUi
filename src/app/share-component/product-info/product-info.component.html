@@ -87,9 +87,9 @@
           <tr *ngFor="let item of getData();let i = index">
             <td>{{i+1}}</td>
             <td>{{item.title}}</td>
-            <td>{{item.price | currency: ' ':'':'1.0-0'}}</td>
-            <td>{{item.price2 | currency: ' ':'':'1.0-0'}}</td>
-            <td>{{item.price3 | currency: ' ':'':'1.0-0'}}</td>
+            <td>{{(item.price !== "0")?item.price  : " " | currency: ' ':'':'1.0-0'}}</td>
+            <td>{{(item.price2 !== "0")?item.price2  : " " | currency: ' ':'':'1.0-0'}}</td>
+            <td>{{(item.price3 !== "0")?item.price3  : " " | currency: ' ':'':'1.0-0'}}</td>
           </tr>
         </table>
 

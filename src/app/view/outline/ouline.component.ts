@@ -17,6 +17,8 @@ export class OulineComponent implements OnInit {
     private api: ApiService
   ) { }
 
+  newData1: any[] = [];
+  newData2: any[] = [];
 
   jsonData: {
     createDate: string;
@@ -111,89 +113,71 @@ export class OulineComponent implements OnInit {
 
   loadOrgList1(): void{
     this.api.loadStructures('').subscribe(res => {          
-      const map = res.data.filter((f: { org_id: string; }) => f.org_id === "2").map((m:OrgData) => {return {
-        name: m.name,
-        type : m.type,
-        children: m.children.map(e => { return{
-            name: e.name,
-            type : e.type,
-            children: (e.children)? e.children.map(ee => { return {
-                 name: ee.name, 
-                 type:ee.type, 
-                 children:(ee.children)? ee.children.map(eee => {return {
-                   name: eee.name,
-                   type:eee.type,
-                   children: (eee.children)? eee.children.map(eeee => {return {
-                     name: eeee.name,
-                     type: eeee.type,
-                     children: (eeee.children)? eeee.children.map(eeeee => {return {
-                       name: eeeee.name,
-                       type: eeeee.type,
-                       children: (eeeee.children)? eeeee.children.map(eeeeee => {return {
-                         name: eeeeee.name,
-                         type: eeeeee.type,
-                         children: (eeeeee.children)? eeeeee.children.map(eeeeeee => {return {
-                           name: eeeeeee.name,
-                           type: eeeeeee.type,
-                           children: (eeeeeee.children)? eeeeeee.children.map(eeeeeeee => {return {
-                             name: eeeeeeee.name,
-                             type: eeeeeeee.type,
-                             children: (eeeeeeee.children)? eeeeeeee.children : []
-                           }}) : [] 
-                         }}) : []
-                       }}) : []
-                     }}) : []
-                   }}) : []
-                  }}) : [] 
-                }}): []
-          }
-        })
-      }});
-     this.masterOrgList1 = map[0];
+      this.newData1 = res.data.filter((f: { org_id: string; }) => f.org_id === '2');
+      const map = res.data.filter((f: { org_id: string; }) => f.org_id === '2').map((m: OrgData) => {
+        return {
+          name: m.name,
+          type: m.type,
+          children: m.children.map(e => {
+            return {
+              name: e.name,
+              type: e.type,
+              children: (e.children) ? e.children.map(ee => {
+                return {
+                  name: ee.name,
+                  type: ee.type,
+                  children: (ee.children) ? ee.children.map(eee => {
+                    return {
+                      name: eee.name,
+                      type: eee.type,
+                      children: (eee.children) ? eee.children.map(eeee => {
+                        return {
+                          name: eeee.name,
+                          type: eeee.type,
+                          children: (eeee.children) ? eeee.children.map(eeeee => {
+                            return {
+                              name: eeeee.name,
+                              type: eeeee.type,
+                              children: (eeeee.children) ? eeeee.children.map(eeeeee => {
+                                return {
+                                  name: eeeeee.name,
+                                  type: eeeeee.type,
+                                  children: (eeeeee.children) ? eeeeee.children.map(eeeeeee => {
+                                    return {
+                                      name: eeeeeee.name,
+                                      type: eeeeeee.type,
+                                      children: (eeeeeee.children) ? eeeeeee.children.map(eeeeeeee => {
+                                        return {
+                                          name: eeeeeeee.name,
+                                          type: eeeeeeee.type,
+                                          children: (eeeeeeee.children) ? eeeeeeee.children : []
+                                        };
+                                      }) : []
+                                    };
+                                  }) : []
+                                };
+                              }) : []
+                            };
+                          }) : []
+                        };
+                      }) : []
+                    };
+                  }) : []
+                };
+              }) : []
+            };
+          })
+        };
+      });
+
     })
   }
 
   loadOrgList2(): void{
     this.api.loadStructures('').subscribe(res => {          
-      const map = res.data.filter((f: { org_id: string; }) => f.org_id === "3").map((m:OrgData) => {return {
-        name: m.name,
-        type : m.type,
-        children: m.children.map(e => { return{
-            name: e.name,
-            type : e.type,
-            children: (e.children)? e.children.map(ee => { return {
-                 name: ee.name, 
-                 type:ee.type, 
-                 children:(ee.children)? ee.children.map(eee => {return {
-                   name: eee.name,
-                   type:eee.type,
-                   children: (eee.children)? eee.children.map(eeee => {return {
-                     name: eeee.name,
-                     type: eeee.type,
-                     children: (eeee.children)? eeee.children.map(eeeee => {return {
-                       name: eeeee.name,
-                       type: eeeee.type,
-                       children: (eeeee.children)? eeeee.children.map(eeeeee => {return {
-                         name: eeeeee.name,
-                         type: eeeeee.type,
-                         children: (eeeeee.children)? eeeeee.children.map(eeeeeee => {return {
-                           name: eeeeeee.name,
-                           type: eeeeeee.type,
-                           children: (eeeeeee.children)? eeeeeee.children.map(eeeeeeee => {return {
-                             name: eeeeeeee.name,
-                             type: eeeeeeee.type,
-                             children: (eeeeeeee.children)? eeeeeeee.children : []
-                           }}) : [] 
-                         }}) : []
-                       }}) : []
-                     }}) : []
-                   }}) : []
-                  }}) : [] 
-                }}): []
-          }
-        })
-      }});
-     this.masterOrgList2 = map[0];
+      this.newData2 = res.data.filter((f: { org_id: string; }) => f.org_id === '3');
+
+ 
     })
   }
 

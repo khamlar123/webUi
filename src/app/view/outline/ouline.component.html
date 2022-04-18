@@ -6,12 +6,12 @@
     </div>
 
     <div class="kong-sang" *ngIf="id === 1">
-      <div class="chartOne" style="margin-bottom: 2rem;">
-        <app-org-data [modal]="masterOrgList1"></app-org-data>
+      <div class="chartOne" style="width: 100%; display: flex;align-items: center; justify-content: center; ">
+        <app-org2 style=" margin:  0 auto; " [modal]="newData1"></app-org2>
       </div>
 
-      <div class="chartOne">
-        <app-org-data [modal]="masterOrgList2"></app-org-data>
+      <div class="chartOne" style="width: 100%; display: flex;align-items: center; justify-content: center; ">
+        <app-org2 [modal]="newData2"></app-org2>
       </div>
 
 
