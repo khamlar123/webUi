@@ -85,7 +85,7 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
       "keyword": ""
     }
     this.loadNoticeSubscription = this.noticeApiService.loadNotice2(setParams).subscribe(res => {
-      console.log('bbbb', res);
+
 
       if (res.status == 1) {
 
@@ -94,7 +94,7 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
         for (let i = 0; i < this.noticeList2.length; i++) {
           this.noticeList2[i].imgUrl = JSON.parse(this.noticeList2[i].imgUrl);
         }
-        console.log(`789`, this.noticeList2);
+  
       }
     });
   }
@@ -119,23 +119,23 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
   }
 
   getData(): any[]{
-    console.log(this.main);
-    
+  
     const newList:any[] = [];
-    this.noticeList.slice(0, 3).forEach(e => {
-      e.province = 'ແຂວງຜົ້ງສາລີ';
+    this.noticeList.forEach(e => {
         newList.push(e);
     });
+    let i = -1;
+    newList.forEach(e => {
+      i++;
+        e.price2 = this.noticeList2.map(m => m.price)[i];
+      
+    });
 
-    this.noticeList2.slice(0, 3).forEach(e => {
-      e.province = 'ແຂວງອຸດົມໄຊ';
-      newList.push(e);
-  });
-
-    this.noticeList3.slice(0, 3).forEach(e => {
-      e.province = 'ແຂວງຫຼວງນ້ຳທາ';
-      newList.push(e);
-  });    
+    let p = -1;
+    newList.forEach(e => {
+      p++;
+        e.price3 =  this.noticeList3.map(m => m.price)[p];
+    });    
     return newList;
   }
 

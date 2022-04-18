@@ -80,16 +80,16 @@
           <tr>
             <th>ລໍາດັບ</th>
             <th>ຫົວຂໍ້ອັບເດດສີນຄ້າ</th>
-            <th>ລາຍລະອຽດ</th>
-            <th>ລາຄາ</th>
-            <th>ແຂວງ</th>
+            <th>ແຂວງຜົ້ງສາລີ</th>
+            <th>ແຂວງອຸດົມໄຊ</th>
+            <th>ແຂວງຫຼວງນໍ້າທາ</th>
           </tr>
           <tr *ngFor="let item of getData();let i = index">
             <td>{{i+1}}</td>
             <td>{{item.title}}</td>
-            <td>{{item.dsc}}</td>
             <td>{{item.price | currency: ' ':'':'1.0-0'}}</td>
-            <td>{{item.province}}</td>
+            <td>{{item.price2 | currency: ' ':'':'1.0-0'}}</td>
+            <td>{{item.price3 | currency: ' ':'':'1.0-0'}}</td>
           </tr>
         </table>
 
