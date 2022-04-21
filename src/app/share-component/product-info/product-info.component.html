@@ -5,76 +5,6 @@
   <div class="product-wrapper">
     <div class="git-item">
 
-      <!-- <div class="item">
-        <div class="item-title">
-          <span class="material-icons">place</span>
-          <h4>ອັບເດດສີນຄ້າແຂວງຜົ້ງສາລີ</h4>
-        </div>
-        <div class="table-wrapper">
-          <table>
-            <tr>
-              <th style="width: 50px;">ລ/ດ</th>
-              <th>ຫົວຂໍ້ອັບເດດສີນຄ້າ</th>
-              <th>ລາຍລະອຽດ</th>
-            </tr>
-
-            <tr *ngFor="let item of noticeList;let i = index">
-              <td>{{i+1}}</td>
-              <td>{{item.title}}</td>
-              <td class="dsc"><a href="http://216.127.173.163/{{item.imgUrl[0]}}" target="blink">{{item.dsc}}</a></td>
-            </tr>
-          </table>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-title">
-          <span class="material-icons">place</span>
-          <h4>ອັບເດດສີນຄ້າແຂວງອຸດົມໄຊ</h4>
-        </div>
-
-        <div class="table-wrapper">
-          <table>
-            <tr>
-              <th style="width: 50px;">ລ/ດ</th>
-              <th>ຫົວຂໍ້ອັບເດດສີນຄ້າ</th>
-              <th>ລາຍລະອຽດ</th>
-            </tr>
-
-            <tr *ngFor="let item of noticeList2;let i = index">
-              <td>{{i+1}}</td>
-              <td>{{item.title}}</td>
-              <td class="dsc"><a href="http://216.127.173.163/{{item.imgUrl[0]}}" target="blink">{{item.dsc}}</a></td>
-            </tr>
-          </table>
-        </div>
-
-      </div>
-
-      <div class="item">
-        <div class="item-title">
-          <span class="material-icons">place</span>
-          <h4>ອັບເດດສີນຄ້າແຂວງຫຼວງນ້ຳທາ</h4>
-        </div>
-
-        <div class="table-wrapper">
-          <table>
-            <tr>
-              <th style="width: 50px;">ລ/ດ</th>
-              <th>ຫົວຂໍ້ອັບເດດສີນຄ້າ</th>
-              <th>ລາຍລະອຽດ</th>
-            </tr>
-
-            <tr *ngFor="let item of noticeList3;let i = index">
-              <td>{{i+1}}</td>
-              <td>{{item.title}}</td>
-              <td class="dsc"><a href="http://216.127.173.163/{{item.imgUrl[0]}}" target="blink">{{item.dsc}}</a></td>
-            </tr>
-          </table>
-        </div>
-      </div> -->
-
-
       <div class="table-wrapper">
         <table>
           <tr>
@@ -84,17 +14,23 @@
             <th>ແຂວງອຸດົມໄຊ</th>
             <th>ແຂວງຫຼວງນໍ້າທາ</th>
           </tr>
-          <tr *ngFor="let item of getData();let i = index">
+          <tr *ngFor="let item of getData();let i = index" (click)="getHistory(item)">
             <td>{{i+1}}</td>
             <td>{{item.title}}</td>
-            <td>{{(item.price !== "0")?item.price  : " " | currency: ' ':'':'1.0-0'}}</td>
-            <td>{{(item.price2 !== "0")?item.price2  : " " | currency: ' ':'':'1.0-0'}}</td>
-            <td>{{(item.price3 !== "0")?item.price3  : " " | currency: ' ':'':'1.0-0'}}</td>
+            <td>{{(item.price === "0")? " " : item.price | currency: ' ':'':'1.0-0'}}</td>
+            <td>{{(item.price2 === "0")? " " : item.price2 | currency: ' ':'':'1.0-0'}}</td>
+            <td>{{(item.price3 === "0")? " " : item.price3| currency: ' ':'':'1.0-0'}}</td>
           </tr>
         </table>
-
-     
       </div>
     </div>
   </div>
+
+  <!-- <div class="modal-container">
+    <div class="content card">
+
+    </div>
+  </div> -->
+
+
 </div>

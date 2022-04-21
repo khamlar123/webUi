@@ -46,7 +46,7 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
   public imgUrl: any[] = [];
   public imageList: any[] = [];
 
-  constructor(private noticeApiService: NoticeApiService, private main : ServiceService) { }
+  constructor(private noticeApiService: NoticeApiService, private main: ServiceService) { }
 
   ngOnInit(): void {
     this.loadNotice();
@@ -59,18 +59,16 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
     if (this.loadNoticeSubscription) { this.loadNoticeSubscription.unsubscribe(); }
   }
 
-  public loadNotice() {
+  public loadNotice(): void {
     const setParams: any = {
-      "page": 1,
-      "limit": 10,
-      "keyword": ""
-    }
+      page: 1,
+      limit: 10,
+      keyword: '',
+    };
     this.loadNoticeSubscription = this.noticeApiService.loadNotice(setParams).subscribe(res => {
-
-      if (res.status == 1) {
-
+      if (res.status === '1') {
         this.noticeList = res.data.Data;
-
+        // tslint:disable-next-line:prefer-for-of
         for (let i = 0; i < this.noticeList.length; i++) {
           this.noticeList[i].imgUrl = JSON.parse(this.noticeList[i].imgUrl);
         }
@@ -78,39 +76,33 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
     });
   }
 
-  public loadNotice2() {
+  public loadNotice2(): void {
     const setParams: any = {
-      "page": 1,
-      "limit": 10,
-      "keyword": ""
-    }
+      page: 1,
+      limit: 10,
+      keyword: '',
+    };
     this.loadNoticeSubscription = this.noticeApiService.loadNotice2(setParams).subscribe(res => {
-
-
-      if (res.status == 1) {
-
+      if (res.status === '1') {
         this.noticeList2 = res.data.Data;
-
+        // tslint:disable-next-line:prefer-for-of
         for (let i = 0; i < this.noticeList2.length; i++) {
           this.noticeList2[i].imgUrl = JSON.parse(this.noticeList2[i].imgUrl);
         }
-  
       }
     });
   }
 
-  public loadNotice3() {
+  public loadNotice3(): void {
     const setParams: any = {
-      "page": 1,
-      "limit": 10,
-      "keyword": ""
-    }
+      page: 1,
+      limit: 10,
+      keyword: '',
+    };
     this.loadNoticeSubscription = this.noticeApiService.loadNotice3(setParams).subscribe(res => {
-
-      if (res.status == 1) {
-
+      if (res.status === '1') {
         this.noticeList3 = res.data.Data;
-
+        // tslint:disable-next-line:prefer-for-of
         for (let i = 0; i < this.noticeList3.length; i++) {
           this.noticeList3[i].imgUrl = JSON.parse(this.noticeList3[i].imgUrl);
         }
@@ -118,25 +110,28 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
     });
   }
 
-  getData(): any[]{
-  
-    const newList:any[] = [];
+  getData(): any[] {
+    const newList: any[] = [];
     this.noticeList.forEach(e => {
-        newList.push(e);
+      newList.push(e);
     });
     let i = -1;
     newList.forEach(e => {
       i++;
-        e.price2 = this.noticeList2.map(m => m.price)[i];
-      
+      e.price2 = this.noticeList2.map(m => m.price)[i];
     });
 
     let p = -1;
     newList.forEach(e => {
       p++;
-        e.price3 =  this.noticeList3.map(m => m.price)[p];
-    });    
-    return newList;
+      e.price3 = this.noticeList3.map(m => m.price)[p];
+    });
+    return newList.filter(f => f.status !== '0');
+  }
+
+  getHistory(model: any): void {
+    console.log(model);
+
   }
 
 }
