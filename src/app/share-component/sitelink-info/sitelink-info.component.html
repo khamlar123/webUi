@@ -1,0 +1,28 @@
+<div class="container card" style="margin-top: 1rem;">
+  <div class="process-wrapper ">
+    <div class="title">
+      <h3>ບັນດາລີ້ງເວັບໄຊອື່ນ</h3>
+      <a href="javascript:void(0)" [routerLink]="['/siteLinks']" routerLinkActive="router-link-active">
+        <h3>ເບິ່ງເພີ່ມເຕີມ ></h3>
+      </a>
+    </div>
+  </div>
+
+
+  <div class="item-content">
+    <ng-container *ngFor="let item of jasonData;let i = index">
+      <a class="company-wrapper card" href="{{item.slLink}}" id="hiden" target="blank" *ngIf="i < 3">
+
+        <div class="img-wrapper">
+          <img [src]="getImgUrl(item.imgUrl)" alt="img">
+        </div>
+        <div class="company-name">
+          <p>{{item.slName}}</p>
+        </div>
+      </a>
+    </ng-container>
+  </div>
+
+
+
+</div>

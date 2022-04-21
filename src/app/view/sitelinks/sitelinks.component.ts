@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Data } from '@angular/router';
+import { ServiceService } from 'src/app/service.service';
 import { SubSink } from 'subsink';
 import { SitelinkService } from './api/sitelink.service';
 
@@ -10,12 +11,13 @@ import { SitelinkService } from './api/sitelink.service';
 })
 export class SitelinksComponent implements OnInit {
   subs = new SubSink();
-  searchValue = "";
+  searchValue = '';
   jasonData: {
     createDate: Data;
     slLink: string;
     slName: string;
     slid: string;
+    imgUrl: string;
   }[] = [];
 
   masterData: {
@@ -23,16 +25,20 @@ export class SitelinksComponent implements OnInit {
     slLink: string;
     slName: string;
     slid: string;
+    imgUrl: string;
   }[] = [];
-  constructor(public api:SitelinkService) { }
+  url = '';
+  constructor(public api: SitelinkService, private service: ServiceService) {
+    this.url = this.service.baseURL;
+  }
 
   ngOnInit(): void {
     const model = {
-    }
+    };
     this.subs.sink = this.api.loadSiteLinks(model).subscribe(res => {
       this.jasonData = res.data;
       this.masterData = res.data;
-    })
+    });
   }
 
   searchFunc(): void {
@@ -44,6 +50,12 @@ export class SitelinksComponent implements OnInit {
     } else {
       this.jasonData = this.masterData;
     }
+  }
+
+
+  getImgUrl(url: string): string {
+    const str = JSON.parse(url)[0];
+    return this.url.split('/api/')[0] + str.slice(7, str.length);
   }
 
 }

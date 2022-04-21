@@ -1,41 +1,48 @@
 <div class="container card" style="margin-top: 1rem">
-    <div class="process-wrapper ">
-        <div class="title" style="margin-bottom: 1rem;">
-            <h3>ບັນດາລີ້ງເວັບໄຊອື່ນ</h3>
-        </div>
+  <div class="process-wrapper ">
+    <div class="title" style="margin-bottom: 1rem;">
+      <h3>ບັນດາລີ້ງເວັບໄຊອື່ນ</h3>
     </div>
-
-
-    <div class="item-content">
-        <div class="search-wrapper">
-            <button (click)="searchFunc()">ຄົນຫາ</button>
-            <input type="text" placeholder="ຄົນຫາ" [(ngModel)]="searchValue" (keyup.enter)="searchFunc()">
-          </div>
-      <div class="table-wrapper" style="width: 1340px">
-        <table>
-            <tr>
-                <th style="width: 80px;">ລ/ດ</th>
-                <th style="width: 200px;">ຊື່</th>
-                <th>ລິ້ງ</th>
-
-
-            </tr>
-            <tr *ngFor="let item of jasonData;let i = index">
-                <td>{{i+1}}</td>
-                <td>{{item.slName}}</td>
-
-                <td>
-                    <a href="{{item.slLink}}" id="hiden" target="blank">
-                          {{item.slLink}}
-                    </a>
-                </td>
-
-
-            </tr>
-        </table>
-    </div>
-    </div>
-
-
-
   </div>
+
+
+  <div class="item-content">
+    <div class="search-wrapper">
+      <button (click)="searchFunc()">ຄົນຫາ</button>
+      <input type="text" placeholder="ຄົນຫາ" [(ngModel)]="searchValue" (keyup.enter)="searchFunc()">
+    </div>
+    <div class="table-wrapper" style="width: 1340px">
+      <table>
+        <tr>
+          <th style="width: 80px;">ລ/ດ</th>
+          <th style="width: 120px;">ຮູບພາບ</th>
+          <th style="width: 200px;">ຊື່</th>
+          <th>ລິ້ງ</th>
+
+
+        </tr>
+        <tr *ngFor="let item of jasonData;let i = index">
+          <td>{{i+1}}</td>
+          <td>
+            <div class="img-wap">
+              <img [src]="getImgUrl(item.imgUrl)" alt="img">
+            </div>
+
+          </td>
+          <td>{{item.slName}}</td>
+
+          <td>
+            <a href="{{item.slLink}}" id="hiden" target="blank">
+              {{item.slLink}}
+            </a>
+          </td>
+
+
+        </tr>
+      </table>
+    </div>
+  </div>
+
+
+
+</div>
