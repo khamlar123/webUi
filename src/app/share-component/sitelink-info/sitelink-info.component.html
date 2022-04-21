@@ -1,8 +1,8 @@
-<div class="container card" style="margin-top: 1rem;">
+<div class="container " style="margin-top: 1rem;">
   <div class="process-wrapper ">
     <div class="title">
       <h3>ບັນດາລີ້ງເວັບໄຊອື່ນ</h3>
-      <a href="javascript:void(0)" [routerLink]="['/siteLinks']" routerLinkActive="router-link-active">
+      <a style="text-decoration: none; color: black;" href="javascript:void(0)" [routerLink]="['/siteLinks']" routerLinkActive="router-link-active">
         <h3>ເບິ່ງເພີ່ມເຕີມ ></h3>
       </a>
     </div>
@@ -11,7 +11,7 @@
 
   <div class="item-content">
     <ng-container *ngFor="let item of jasonData;let i = index">
-      <a class="company-wrapper card" href="{{item.slLink}}" id="hiden" target="blank" *ngIf="i < 3">
+      <a style="text-decoration: none;" class="company-wrapper " href="{{item.slLink}}" id="hiden" target="blank" *ngIf="i < 4">
 
         <div class="img-wrapper">
           <img [src]="getImgUrl(item.imgUrl)" alt="img">
@@ -22,7 +22,6 @@
       </a>
     </ng-container>
   </div>
-
 
 
 </div>
