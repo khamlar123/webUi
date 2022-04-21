@@ -11,7 +11,7 @@ import { NoticeApiService } from './api/notice-api.service';
 export class ProductInfoComponent implements OnInit, OnDestroy {
 
 
-
+  openModalHistory = false;
   public loadNoticeSubscription: Subscription | undefined;
   public noticeList: {
     dsc: string;
@@ -45,6 +45,8 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
   }[] = [];
   public imgUrl: any[] = [];
   public imageList: any[] = [];
+
+  historyList: any[] = [];
 
   constructor(private noticeApiService: NoticeApiService, private main: ServiceService) { }
 
@@ -129,9 +131,35 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
     return newList.filter(f => f.status !== '0');
   }
 
-  getHistory(model: any): void {
-    console.log(model);
+  setHistory(model: any): void {
+    this.noticeList.filter(f => f.gen_id === model.gen_id).forEach(e => {
+      this.historyList.push(e);
+    });
+    let i = -1;
+    this.historyList.forEach(e => {
+      i++;
+      e.price2 = this.noticeList2.filter(f => f.gen_id === model.gen_id).map(m => m.price)[i];
+    });
+
+    let p = -1;
+    this.historyList.forEach(e => {
+      p++;
+      e.price3 = this.noticeList3.filter(f => f.gen_id === model.gen_id).map(m => m.price)[p];
+    });
+
+    this.openModalHistory = true;
+  }
+
+  getHistory(): any[] {
+    return this.historyList;
+  }
+
+  closeFunc(): void {
+    this.openModalHistory = false;
+    this.historyList = [];
 
   }
+
+
 
 }

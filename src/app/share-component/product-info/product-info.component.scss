@@ -75,10 +75,9 @@
       }
 
       .table-wrapper {
-        
         tr {
           height: 35px;
-        
+
           td {
             border: none;
             padding: 0 10px;
@@ -88,7 +87,7 @@
             }
           }
 
-          th{
+          th {
             border: none;
           }
           .dsc {
@@ -104,6 +103,33 @@
               height: 45px;
             }
           }
+        }
+      }
+    }
+  }
+
+  .modal-container {
+    .content {
+      position: relative;
+      padding: 2rem;
+      display: grid;
+
+      .img-warp {
+        width: 180px;
+        height: 180px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .colse {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+        span {
+          color: red;
         }
       }
     }
