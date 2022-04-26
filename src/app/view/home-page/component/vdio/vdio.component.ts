@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { ServiceService } from 'src/app/service.service';
 import { SubSink } from 'subsink';
 import { HomePageApiService } from '../../api/home-page-api.service';
 
@@ -15,10 +16,14 @@ export class VdioComponent implements OnInit, OnDestroy {
 
   safeSrc: SafeResourceUrl[] = [];
   pos = 0;
+  url = '';
   constructor(
     private homePageAPI: HomePageApiService,
-    private sanitizer: DomSanitizer
-  ) { }
+    private sanitizer: DomSanitizer,
+    public service: ServiceService
+  ) {
+    this.url = this.service.baseURL;
+  }
   ngOnDestroy(): void {
     this.subs.unsubscribe();
   }
@@ -56,6 +61,16 @@ export class VdioComponent implements OnInit, OnDestroy {
   // tslint:disable-next-line:typedef
   chngeVdio(id: number) {
     this.pos = id;
+  }
+
+  getImgUrl(): string {
+    console.log(this.url.split('/website'));
+
+    return this.url.split('/website')[0] + '/';
+  }
+
+  checkVdio(): boolean{
+    return (this.vdioList[this.pos].status === '1')? true : false;
   }
 
 }

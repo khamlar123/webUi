@@ -4,16 +4,23 @@
       <h3 style="color: #1e73be;">ວິດີໂອການເຄື່ອນໄຫວ</h3>
     </div>
 
-    <iframe  [src]="safeSrc[pos]"  frameborder="0" allowfullscreen style="height: 400px;"></iframe>
+    <iframe *ngIf="!checkVdio()" [src]="safeSrc[pos]"  frameborder="0" allowfullscreen style="height: 400px;"></iframe>
+    <video *ngIf="checkVdio()"   height="400" controls>
+      <source src="{{getImgUrl() + vdioList[pos].video_url}}" type="video/mp4">
+    </video>
     <div class="vdio-info">
         <!-- <p *ngIf="pos">{{vdioList[pos].video_description}}</p> -->
     </div>
 
     <div class="vdio-list">
         <ng-container *ngFor="let item of vdioList;let i = index">
-          <div class="item "  style="cursor: pointer;">
+          <div class="item "  style="cursor: pointer;" (click)="pos = i">
             <div class="vdio-fram" >
-              <iframe  [src]="safeSrc[i]" frameborder="0" allowfullscreen style="width: 150px; height: 100px;"></iframe>
+              <iframe  *ngIf="item.status == '0'"  [src]="safeSrc[i]" frameborder="0" allowfullscreen style="width: 150px; height: 100px;"></iframe>
+
+              <video *ngIf="item.status == '1'" width="150"  height="100" controls>
+                <source src="{{getImgUrl() + item.video_url}}" type="video/mp4">
+              </video>
             </div>
             <div class="vdio-detail">
               <p>{{item.video_description}}</p>
