@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NewsWrapperComponent implements OnInit {
   @Input() modal: any;
   @Input() ListCunt: any;
-  enpoin = `http://216.127.173.163/`;
+  enpoin = `http://psldoic.gov.la`;
   url = 'https://www.youtube.com/embed/sX5StCTZpfQ';
   constructor() { }
 

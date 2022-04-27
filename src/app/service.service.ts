@@ -11,9 +11,14 @@ export class ServiceService {
 
   constructor() { }
 
-  public baseURL = 'http://216.127.173.163/website/api/';
-  public Url2 = 'http://216.127.173.163/oudomxay/api/';
-  public Url3 = 'http://216.127.173.163/louangnamtha/api/';
+  // public baseURL = 'http://216.127.173.163/website/api/';
+  // public Url2 = 'http://216.127.173.163/oudomxay/api/';
+  // public Url3 = 'http://216.127.173.163/louangnamtha/api/';
+
+
+  public baseURL = 'http://psldoic.gov.la/website/api/';
+  public Url2 = 'http://odxdoic.gov.la/oudomxay/api/';
+  public Url3 = 'http://lntdoic.gov.la/louangnamtha/api/';
 
 
   public setHeader(method: string): HttpHeaders {

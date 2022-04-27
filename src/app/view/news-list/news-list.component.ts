@@ -18,7 +18,7 @@ export class NewsListComponent implements OnInit, OnDestroy {
   newsList: any[] = [];
   newsListCount: any[] = [];
   bannerRef1List: any[] = [];
-  enpoin = `http://216.127.173.163/`;
+  enpoin = `http://psldoic.gov.la/website`;
 
   vdioList: any[] = [];
   vdioUrl = 'https://www.youtube.com/embed/';
@@ -89,13 +89,13 @@ export class NewsListComponent implements OnInit, OnDestroy {
     return array;
   }
 
-  getImgUrl(url: string): string {
-    if (url) {
-      return JSON.parse(url)[0] ? JSON.parse(url)[0] : JSON.parse(url);
-    } else {
-      return this.url + url;
-    }
-  }
+  // getImgUrl(url: string): string {
+  //   if (url) {
+  //     return JSON.parse(url)[0] ? JSON.parse(url)[0] : JSON.parse(url);
+  //   } else {
+  //     return this.url + url;
+  //   }
+  // }
 
   loadVdio(): void{
     const model = {
@@ -118,6 +118,11 @@ export class NewsListComponent implements OnInit, OnDestroy {
   getYoutubeUrl(value: string): string {
     const skipLink = value.split('?v=');
     return this.vdioUrl + skipLink[1];
+  }
+
+  getImgUrl(url: string):string{
+    let str = JSON.parse(url)[0];
+    return this.url + str.slice(7, str.length);
   }
 
 

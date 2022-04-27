@@ -11,7 +11,7 @@ import { BannerAPIService } from './api/banner-api.service';
 })
 export class BannerSliderComponent implements OnInit, OnDestroy {
   subs = new SubSink();
-  url = `http://216.127.173.163/`;
+  url = `http://psldoic.gov.la/`;
 
   public imgUrl: any[] = [];
   public imageList: any = [];

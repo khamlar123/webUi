@@ -15,7 +15,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
   subs = new SubSink();
   imgIndex = 0;
   sliderEfficeIndex = 0;
-  enpoin = `http://216.127.173.163/`;
+  enpoin = `http://psldoic.gov.la/`;
 
   public loadNewSubscription: Subscription | undefined;
   public loadBannerRef2Subscription: Subscription | undefined;

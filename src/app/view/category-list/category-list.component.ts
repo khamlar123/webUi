@@ -8,7 +8,7 @@ import { CategoryApiService } from './api/category-api.service';
   styleUrls: ['./category-list.component.scss']
 })
 export class CategoryListComponent implements OnInit {
-  enpoin = `http://216.127.173.163/`;
+  enpoin = `http://psldoic.gov.la`;
   brannList: any[] = [];
 
   constructor(

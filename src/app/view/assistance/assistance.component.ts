@@ -8,7 +8,7 @@ import { ApiService } from './api/api.service';
 })
 export class AssistanceComponent implements OnInit {
   asModalId = 0;
-  url = 'http://216.127.173.163/website';
+  url = 'http://psldoic.gov.la/website';
   searchValue = '';
   jsonData: {
     asId: string;

@@ -25,17 +25,17 @@
           <div class="sw-lg">
             <div class="lang-wrapp">
               <img
-                src="{{lang== 'la'?'../../../assets/lang-icon/lao_flag.svg':'../../../assets/lang-icon/usa_flag.svg'}}"
+                src="{{lang== 'la'?'./assets/lang-icon/lao_flag.svg':'./assets/lang-icon/usa_flag.svg'}}"
                 alt="">
               <p>{{lang == 'la'?'ລາວ':'English'}}</p>
             </div>
             <div class="select-lang">
               <div class="lao" (click)="lang = 'la'">
-                <img src="../../../assets/lang-icon/lao_flag.svg" alt="">
+                <img src="./assets/lang-icon/lao_flag.svg" alt="">
                 <p>ລາວ</p>
               </div>
               <div class="eng" (click)="lang = 'eng'">
-                <img src="../../../assets/lang-icon/usa_flag.svg" alt="">
+                <img src="./assets/lang-icon/usa_flag.svg" alt="">
                 <p>English</p>
               </div>
             </div>
@@ -50,12 +50,12 @@
       <div class="body-content">
 
         <div class="logo" [routerLink]="['/home']" routerLinkActive="router-link-active">
-          <img src="../assets/logo/logo_ponsaly.jpeg" alt="">
+          <img src="./assets/logo/logo_ponsaly.jpeg" alt="">
         </div>
 
         <div class="title">
           <h3>ພະແນກອຸດສາຫະກຳ ແລະ ການຄ້າ ແຂວງຜົ້ງສາລີ</h3>
-          <h4>Phongsaly Province Department of Industry and Commerce</h4>
+          <h4>Department of Industry and Commerce of Phongsaly Province</h4>
         </div>
         <div></div>
         <!-- <div class="logo">

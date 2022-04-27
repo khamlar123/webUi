@@ -7,7 +7,7 @@ import { ApiService } from './api/api.service';
   styleUrls: ['./donor-flag.component.scss']
 })
 export class DonorFlagComponent implements OnInit {
-  url = `http://216.127.173.163/`;
+  url = `http://psldoic.gov.la/`;
   donorList: {
     donor_id: string;
     dsc: string;

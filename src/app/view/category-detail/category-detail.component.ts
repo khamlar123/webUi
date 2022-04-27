@@ -10,7 +10,7 @@ import { CategoryService } from './api/category.service';
 export class CategoryDetailComponent implements OnInit {
   id = 0;
   bandDetail: any;
-  enpoin = `http://216.127.173.163/`;
+  enpoin = `http://psldoic.gov.la`;
   constructor(
     private route: ActivatedRoute,
     private api: CategoryService

@@ -10,7 +10,7 @@ export class DepamentReportComponent implements OnInit {
 
   constructor(private api: ApiService) { }
   asModalId = 0;
-  url = 'http://216.127.173.163/website';
+  url = 'http://psldoic.gov.la/website';
   searchValue = "";
   asModal: any = {
     asId: '',
