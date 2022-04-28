@@ -21,7 +21,7 @@ export class ServiceService {
   public Url3 = 'http://lntdoic.gov.la/louangnamtha/api/';
 
   getImgUrl(id: number): string{
-    return (id === 1)? 'http://psldoic.gov.la/' : '';
+    return (id === 1)? 'http://psldoic.gov.la/':(id === 2)? 'http://odxdoic.gov.la/': 'http://lntdoic.gov.la/'
   }
 
 

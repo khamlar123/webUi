@@ -16,9 +16,10 @@
     </div>
 
     <div class="content-deal">
-      <a class="product-deal"  *ngFor="let prod of prodList" [routerLink]="[productLink(prod.prod_id)]" routerLinkActive="router-link-active" >
+      <a class="product-deal"  *ngFor="let prod of prodList" >
         <div class="product-deal-img">
           <img src="{{url + prod.imgUrl[0]}}" alt="super deal">
+
         </div>
 
         <div class="title-price">
@@ -31,7 +32,7 @@
               <span class="percent"> {{((prod.salsePrice/prod.price)) *100 - 100 | number:'1.0-0'}}%</span> -->
           </div>
         </div>
-
+        <pre>{{url + prod.imgUrl[0]}}</pre>
       </a>
     </div>
   </div>

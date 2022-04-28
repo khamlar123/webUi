@@ -10,15 +10,16 @@ import { ServiceService } from 'src/app/service.service';
 export class ShareProductComponent implements OnInit, OnDestroy {
   @Input() prodList: any[] = [];
   @Input() title: string = '';
+  @Input() url = '';
   public productListSubscription: Subscription | undefined;
   public productList: any[] = [];
   public imgUrl: any[] = [];
   public imageList: any[] = [];
-  url = ''
+
   constructor(
     public service: ServiceService,
   ) {
-    this.url = service.getImgUrl(1);
+
   }
 
   ngOnDestroy(): void {
