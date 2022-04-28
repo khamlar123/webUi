@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ServiceService } from 'src/app/service.service';
 
 @Component({
   selector: 'app-news-wrapper',
@@ -8,9 +9,13 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NewsWrapperComponent implements OnInit {
   @Input() modal: any;
   @Input() ListCunt: any;
-  enpoin = `http://psldoic.gov.la`;
+  enpoin = ``;
   url = 'https://www.youtube.com/embed/sX5StCTZpfQ';
-  constructor() { }
+  constructor(
+      public service: ServiceService
+  ) {
+    this.enpoin = this.service.getImgUrl(1);
+  }
 
   ngOnInit(): void {
 
@@ -26,10 +31,11 @@ export class NewsWrapperComponent implements OnInit {
   }
 
   getImgUrl(url: string): string {
+
     if (url) {
-      return JSON.parse(url)[0] ? JSON.parse(url)[0] : JSON.parse(url);
+      return (JSON.parse(url)[0]) ? JSON.parse(url)[0] : JSON.parse(url);
     } else {
-      return this.url + url;
+      return url;
     }
   }
 

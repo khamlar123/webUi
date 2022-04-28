@@ -14,9 +14,12 @@ export class ShareProductComponent implements OnInit, OnDestroy {
   public productList: any[] = [];
   public imgUrl: any[] = [];
   public imageList: any[] = [];
+  url = ''
   constructor(
     public service: ServiceService,
-  ) { }
+  ) {
+    this.url = service.getImgUrl(1);
+  }
 
   ngOnDestroy(): void {
     if (this.productListSubscription) { this.productListSubscription.unsubscribe(); }

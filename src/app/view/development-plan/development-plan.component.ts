@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from 'src/app/service.service';
 import { ApiService } from './api/api.service';
 @Component({
   selector: 'app-development-plan',
@@ -7,9 +8,11 @@ import { ApiService } from './api/api.service';
 })
 export class DevelopmentPlanComponent implements OnInit {
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, public service: ServiceService) {
+    this.url = this.service.getImgUrl(1);
+  }
   asModalId = 0;
-  url = 'http://psldoic.gov.la/website';
+  url = '';
   searchValue = '';
   jsonData: {
     asId: string;

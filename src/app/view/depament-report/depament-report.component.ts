@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from 'src/app/service.service';
 import { ApiService } from './api/api.service';
 
 @Component({
@@ -8,9 +9,11 @@ import { ApiService } from './api/api.service';
 })
 export class DepamentReportComponent implements OnInit {
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, public service: ServiceService) {
+    this.url = this.service.getImgUrl(1);
+  }
   asModalId = 0;
-  url = 'http://psldoic.gov.la/website';
+  url = '';
   searchValue = "";
   asModal: any = {
     asId: '',
@@ -38,7 +41,7 @@ export class DepamentReportComponent implements OnInit {
     fileLa: string;
     refId: string;
     title: string;
-  }[] = []; 
+  }[] = [];
 
   ngOnInit(): void {
     this.loadAssistance();
@@ -59,9 +62,13 @@ export class DepamentReportComponent implements OnInit {
     })
   }
 
-  getImgUrl(url: string):string{
-    let str = JSON.parse(url)[0];
-    return this.url + str.slice(7, str.length);
+  getImgUrl(url: string): string {
+
+    if (url) {
+      return (JSON.parse(url)[0]) ? JSON.parse(url)[0] : JSON.parse(url);
+    } else {
+      return url;
+    }
   }
 
   getItems(){

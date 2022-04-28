@@ -28,16 +28,16 @@
         <label>ສະໜັບສະໜູນໂດຍ</label>
         <div class="img-wrap">
           <ng-container *ngFor="let item of donorList">
-            <img [src]="url + imgUrl(item.imgUrl)" alt="img" >
+            <img [src]="url + getImgUrl(item.imgUrl)" alt="img" >
           </ng-container>
-          
-         
+
+
           <!-- <img src="../assets/footer/02.png" alt=""> -->
         </div>
       </div>
     </div>
     <br>
- 
+
   </div>
 </div>
 

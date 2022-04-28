@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from 'src/app/service.service';
 import { ApiService } from './api/api.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ApiService } from './api/api.service';
 })
 export class AssistanceComponent implements OnInit {
   asModalId = 0;
-  url = 'http://psldoic.gov.la/website';
+  url = '';
   searchValue = '';
   jsonData: {
     asId: string;
@@ -38,7 +39,9 @@ export class AssistanceComponent implements OnInit {
     createDate: '',
     asTitle: ''
   }
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private service: ServiceService) {
+    this.url = this.service.getImgUrl(1);
+   }
 
   ngOnInit(): void {
     this.loadAssistance();
@@ -59,9 +62,13 @@ export class AssistanceComponent implements OnInit {
     })
   }
 
-  getImgUrl(url: string):string{
-    let str = JSON.parse(url)[0];
-    return this.url + str.slice(7, str.length);
+  getImgUrl(url: string): string {
+
+    if (url) {
+      return (JSON.parse(url)[0]) ? JSON.parse(url)[0] : JSON.parse(url);
+    } else {
+      return url;
+    }
   }
 
   getItems(){

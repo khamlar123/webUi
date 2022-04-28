@@ -20,7 +20,7 @@ export class SitelinkInfoComponent implements OnInit, OnDestroy {
   subs = new SubSink();
   url = '';
   constructor(private api: SitelinkService, private service: ServiceService) {
-    this.url = this.service.baseURL;
+    this.url = this.service.getImgUrl(1);
   }
   ngOnDestroy(): void {
     this.subs.unsubscribe();
@@ -36,8 +36,12 @@ export class SitelinkInfoComponent implements OnInit, OnDestroy {
   }
 
   getImgUrl(url: string): string {
-    const str = JSON.parse(url)[0];
-    return this.url.split('/api/')[0] + str.slice(7, str.length);
+
+    if (url) {
+      return (JSON.parse(url)[0]) ? JSON.parse(url)[0] : JSON.parse(url);
+    } else {
+      return url;
+    }
   }
 
 }

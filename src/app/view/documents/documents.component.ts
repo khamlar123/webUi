@@ -39,12 +39,12 @@ export class DocumentsComponent implements OnInit {
     private routes: Router,
     private api: ApiService,
     private service: ServiceService
-  ) { 
-    this.url = this.service.baseURL;
+  ) {
+    this.url = this.service.getImgUrl(1);
   }
 
   ngOnInit(): void {
-    
+
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.routes.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -96,25 +96,12 @@ export class DocumentsComponent implements OnInit {
 
 
   getImgUrl(url: string): string {
-    console.log(url);
-    
-    const str = JSON.parse(url)[0];
 
-    if (JSON.parse(url)[0] === null || JSON.parse(url)[0] === undefined) {
-      return '';
+    if (url) {
+      return (JSON.parse(url)[0]) ? JSON.parse(url)[0] : JSON.parse(url);
+    } else {
+      return url;
     }
-    return this.url + str.slice(7, str.length);
-  }
-
-  getLink(value: string): string{
-
-    
-    if(value !== undefined){
-      return  this.url.split("/api")[0] + JSON.parse(value)[0].slice(7, value.length)
-    }
-
-    return '';
-      
   }
 
   searchFunc(): void {
@@ -128,6 +115,6 @@ export class DocumentsComponent implements OnInit {
     }
   }
 
-  
+
 
 }

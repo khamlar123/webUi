@@ -14,12 +14,14 @@ export class ProductDetailComponent implements OnInit {
   web = 0;
   public loadProductDetailSubscription: Subscription | undefined;
   public producrDetailList: any[] = [];
-
+  url = '';
   constructor(
     public service: ServiceService,
     private route: ActivatedRoute,
     private productDetailApiService: ProductDetailApiService
-  ) { }
+  ) {
+    this.url = this.service.getImgUrl(1);
+  }
 
   ngOnInit(): void {
     this.prodId = Number(this.route.snapshot.paramMap.get('id'));

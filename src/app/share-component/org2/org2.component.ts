@@ -20,8 +20,8 @@ export class Org2Component implements OnInit {
   }[];
   url = '';
   detailData: any;
-  constructor(private service : ServiceService) { 
-    this.url = service.baseURL;
+  constructor(private service : ServiceService) {
+    this.url = this.service.getImgUrl(1);
   }
 
   ngOnInit(): void {
@@ -37,17 +37,12 @@ export class Org2Component implements OnInit {
   }
 
   getImgUrl(url: string): string {
-    if(url !== null){
-      const str = JSON.parse(url)[0];
 
-      if (JSON.parse(url)[0] === null) {
-        return '';
-      }
-      return this.url.split('/api/')[0] + str.slice(7, str.length);
+    if (url) {
+      return (JSON.parse(url)[0]) ? JSON.parse(url)[0] : JSON.parse(url);
+    } else {
+      return url;
     }
-
-    return '';
-  
   }
 
 }

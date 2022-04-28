@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ServiceService } from 'src/app/service.service';
 import { CategoryApiService } from './api/category-api.service';
 
 @Component({
@@ -8,13 +9,16 @@ import { CategoryApiService } from './api/category-api.service';
   styleUrls: ['./category-list.component.scss']
 })
 export class CategoryListComponent implements OnInit {
-  enpoin = `http://psldoic.gov.la`;
+  enpoin = '';
   brannList: any[] = [];
 
   constructor(
     private router: Router,
-    private api: CategoryApiService
-  ) { }
+    private api: CategoryApiService,
+    public service: ServiceService
+  ) {
+    this.enpoin = this.service.getImgUrl(1);
+  }
 
   ngOnInit(): void {
     this.loadBnner();
@@ -60,10 +64,11 @@ export class CategoryListComponent implements OnInit {
 
 
   getImgUrl(url: string): string {
+
     if (url) {
-      return JSON.parse(url)[0] ? JSON.parse(url)[0] : JSON.parse(url);
+      return (JSON.parse(url)[0]) ? JSON.parse(url)[0] : JSON.parse(url);
     } else {
-      return '';
+      return url;
     }
   }
 

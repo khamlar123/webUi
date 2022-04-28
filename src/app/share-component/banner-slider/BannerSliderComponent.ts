@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
+import { ServiceService } from 'src/app/service.service';
 import { SubSink } from 'subsink';
 import { BannerAPIService } from './api/banner-api.service';
 
@@ -11,14 +12,19 @@ import { BannerAPIService } from './api/banner-api.service';
 })
 export class BannerSliderComponent implements OnInit, OnDestroy {
   subs = new SubSink();
-  url = `http://psldoic.gov.la/`;
+  url = ``;
 
   public imgUrl: any[] = [];
   public imageList: any = [];
   public loadBannerSliderDataSubscription: Subscription | undefined;
   showIndex = 0;
 
-  constructor(private bannerAPIService: BannerAPIService) { }
+  constructor(
+    private bannerAPIService: BannerAPIService,
+    private service: ServiceService
+    ) {
+      this.url = this.service.getImgUrl(1);
+    }
 
 
   ngOnDestroy(): void {
@@ -40,45 +46,19 @@ export class BannerSliderComponent implements OnInit, OnDestroy {
         console.log('zzzzzz',res);
 
         this.imageList = this.sortFunc(res.data.filter((f: { ref_id: string; }) => f.ref_id === '1'), 'orderIndex');
-        // sort last ref 1 active because response data not range from biggest to small
-        // this.imgUrl = res.data;
-        // this.imgUrl = this.imgUrl.filter(item => {
-        //   return item.ref_id == 1;
-        // });
 
-        // let getLastId: any[] = [];
-        // for (let i = 0; i < this.imgUrl.length; i++) {
-        //   getLastId.push(this.imgUrl[i].bann_id);
-        // }
-
-        // getLastId = getLastId.sort((a, b) => b - a);
-
-        // this.imgUrl = this.imgUrl.filter(item => {
-        //   return item.bann_id == getLastId[0]
-        // });
-
-
-        // this.imgUrl = this.imgUrl[0].imgUrl;
-        // const imageStr = this.imgUrl.toString();
-        // const imageArr: any = Array(imageStr);
-        // this.imageList = JSON.parse(imageArr);
-        // let createImageList: any = [];
-
-        // for (let i = 0; i < this.imageList.length; i++) {
-        //   createImageList.push({ imgUrl: `http://216.127.173.163/${this.imageList[i]}` });
-        // }
-
-        // this.imageList = createImageList;
 
 
     });
   }
 
+
   getImgUrl(url: string): string {
+
     if (url) {
-      return JSON.parse(url)[0] ? JSON.parse(url)[0] : JSON.parse(url);
+      return (JSON.parse(url)[0]) ? JSON.parse(url)[0] : JSON.parse(url);
     } else {
-      return this.url + url;
+      return url;
     }
   }
 

@@ -15,7 +15,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
   subs = new SubSink();
   imgIndex = 0;
   sliderEfficeIndex = 0;
-  enpoin = `http://psldoic.gov.la/`;
+  enpoin = '';
 
   public loadNewSubscription: Subscription | undefined;
   public loadBannerRef2Subscription: Subscription | undefined;
@@ -31,7 +31,9 @@ export class HomePageComponent implements OnInit, OnDestroy {
   constructor(
     public service: ServiceService,
     private homePageAPI: HomePageApiService
-  ) { }
+  ) {
+    this.url = this.service.getImgUrl(1);
+   }
 
   ngOnInit(): void {
     this.loadProduct();
@@ -79,10 +81,11 @@ export class HomePageComponent implements OnInit, OnDestroy {
   }
 
   getImgUrl(url: string): string {
+
     if (url) {
-      return JSON.parse(url)[0] ? JSON.parse(url)[0] : JSON.parse(url);
+      return (JSON.parse(url)[0]) ? JSON.parse(url)[0] : JSON.parse(url);
     } else {
-      return this.url + url;
+      return url;
     }
   }
 

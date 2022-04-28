@@ -36,8 +36,8 @@ export class StatisticsComponent implements OnInit {
     private routes: Router,
     private api: ApiService,
     private service: ServiceService
-  ) { 
-    this.url =  this.service.baseURL;
+  ) {
+    this.url =  this.service.getImgUrl(1);
   }
 
   ngOnInit(): void {
@@ -93,9 +93,13 @@ export class StatisticsComponent implements OnInit {
 
   }
 
-  getImgUrl(url: string):string{     
-    let str = JSON.parse(url)[0];
-    return this.url.split('/api/')[0] + str.slice(7, str.length);
+  getImgUrl(url: string): string {
+
+    if (url) {
+      return (JSON.parse(url)[0]) ? JSON.parse(url)[0] : JSON.parse(url);
+    } else {
+      return url;
+    }
   }
 
   searchFunc(): void {

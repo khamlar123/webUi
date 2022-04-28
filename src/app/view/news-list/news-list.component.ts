@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ServiceService } from 'src/app/service.service';
 import { SubSink } from 'subsink';
 import { HomePageApiService } from '../home-page/api/home-page-api.service';
 import { NewListApiService } from './api/new-list-api.service';
@@ -18,7 +19,7 @@ export class NewsListComponent implements OnInit, OnDestroy {
   newsList: any[] = [];
   newsListCount: any[] = [];
   bannerRef1List: any[] = [];
-  enpoin = `http://psldoic.gov.la/website`;
+  enpoin = ``;
 
   vdioList: any[] = [];
   vdioUrl = 'https://www.youtube.com/embed/';
@@ -29,8 +30,11 @@ export class NewsListComponent implements OnInit, OnDestroy {
     private routes: Router,
     private api: NewListApiService,
     private bandApi: HomePageApiService,
-    private sanitizer: DomSanitizer
-  ) { }
+    private sanitizer: DomSanitizer,
+    public service: ServiceService
+  ) {
+    this.url = this.service.getImgUrl(1);
+  }
   ngOnDestroy(): void {
     this.subs.unsubscribe();
   }
@@ -120,9 +124,13 @@ export class NewsListComponent implements OnInit, OnDestroy {
     return this.vdioUrl + skipLink[1];
   }
 
-  getImgUrl(url: string):string{
-    let str = JSON.parse(url)[0];
-    return this.url + str.slice(7, str.length);
+  getImgUrl(url: string): string {
+
+    if (url) {
+      return (JSON.parse(url)[0]) ? JSON.parse(url)[0] : JSON.parse(url);
+    } else {
+      return url;
+    }
   }
 
 

@@ -22,7 +22,7 @@ export class VdioComponent implements OnInit, OnDestroy {
     private sanitizer: DomSanitizer,
     public service: ServiceService
   ) {
-    this.url = this.service.baseURL;
+    this.url = this.service.getImgUrl(1);
   }
   ngOnDestroy(): void {
     this.subs.unsubscribe();
@@ -63,10 +63,13 @@ export class VdioComponent implements OnInit, OnDestroy {
     this.pos = id;
   }
 
-  getImgUrl(): string {
-    console.log(this.url.split('/website'));
+  getImgUrl(url: string): string {
 
-    return this.url.split('/website')[0] + '/';
+    if (url) {
+      return (JSON.parse(url)[0]) ? JSON.parse(url)[0] : JSON.parse(url);
+    } else {
+      return url;
+    }
   }
 
   checkVdio(): boolean{

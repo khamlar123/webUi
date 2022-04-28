@@ -1,6 +1,6 @@
 <div class="container" *ngIf="prodList.length > 0">
     <div class="super-deal" >
-      <div class="head-super-deal"> 
+      <div class="head-super-deal">
         <div class="the-side">
           <span class="material-icons">
             local_fire_department
@@ -14,11 +14,11 @@
             </span>
         </div>
       </div>
-  
+
       <div class="content-deal">
         <a class="product-deal"  *ngFor="let prod of prodList" [routerLink]="[productLink(prod.prod_id)]" routerLinkActive="router-link-active" >
           <div class="product-deal-img">
-            <img src="http://216.127.173.163/{{prod.imgUrl[0]}}" alt="super deal">
+            <img src="{{url + prod.imgUrl[0]}}" alt="super deal">
           </div>
 
           <div class="title-price">
@@ -26,7 +26,7 @@
             <label >{{prod.dsc}}</label>
             <p id="price">₭ {{prod.salsePrice | currency: '':'':'1.0-0'}}</p>
             <div class="discount">
-             
+
                 <!-- <del>₭ {{prod.price}}</del>
                 <span class="percent"> {{((prod.salsePrice/prod.price)) *100 - 100 | number:'1.0-0'}}%</span> -->
             </div>
@@ -36,4 +36,3 @@
       </div>
     </div>
   </div>
-  

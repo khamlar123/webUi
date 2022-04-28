@@ -1,70 +1,11 @@
-<!-- https://www.cssscript.com/semantic-hierarchy-tree-treeflex/ -->
-<!-- <div class="container">
-  <ng-container *ngFor="let item of modal">
-    <h1 class="level-1 rectangle" (click)="getDetail(item)" style="display: flex; align-items: center;">
-      <div class="img-warp">
-        <img src="../../../assets/user/user1.png" alt="">
-      </div>
-      {{item.name}}
-    </h1>
-    <ol class="level-2-wrapper" *ngIf="item.children.length > 0">
 
-      <ng-container *ngFor="let children1 of item.children">
-        <li>
-          <h2 class="level-2 rectangle" (click)="getDetail(children1)" style="display: flex; align-items: center;">
-            <div class="img-warp">
-              <img src="../../../assets/user/user1.png" alt="">
-            </div>
-            {{children1.name}}
-          </h2>
-
-          <ng-container *ngIf="children1.children.length > 0">
-            <ol class="level-3-wrapper">
-              <li *ngFor="let children2 of children1.children">
-                <h3 class="level-3 rectangle" style=" display: flex;" (click)="getDetail(children2)">
-        
-                  {{children2.name}}
-                </h3>
-
-        
-              </li>
-
-
-            </ol>
-          </ng-container>
-
-
-
-        </li>
-      </ng-container>
-    </ol>
-  </ng-container>
-
-  <div class="modal-container" *ngIf="detailData">
-    <div class="content card">
-      <div class="img-warp">
-        <img src="../../../assets/user/user1.png" alt="">
-      </div>
-      <div class="info">
-        <p>{{detailData.name}}</p>
-        <p>{{detailData.type}}</p>
-      </div>
-
-      <div class="colse">
-        <span class="material-icons" (click)="close()">
-          close
-        </span>
-      </div>
-    </div>
-  </div>
-</div> -->
 
 <div class="tf-tree example">
   <ul>
     <li *ngFor="let item of modal">
       <span class="tf-nc" (click)="getDetail(item)"  style="display: flex; align-items: center; flex-direction: column; text-align: center;">
         <div class="img-wrapper">
-          <img src="{{getImgUrl(item.imgUrl)}}" alt="super deal">
+          <img src="{{url + getImgUrl(item.imgUrl)}}" alt="super deal">
         </div>
         {{item.name}}<br>
         {{item.type}}
@@ -76,7 +17,7 @@
         <li *ngFor="let children1 of item.children">
           <span class="tf-nc" (click)="getDetail(children1)"  style="display: flex; align-items: center; flex-direction: column; text-align: center;">
             <div class="img-wrapper">
-              <img src="{{(getImgUrl(children1.imgUrl))? getImgUrl(children1.imgUrl) : '/assets/user/user1.png'}}" alt="super deal">
+              <img src="{{( getImgUrl(children1.imgUrl))?url + getImgUrl(children1.imgUrl) : './assets/user/user1.png'}}" alt="super deal">
             </div>
             {{children1.name}}<br>
             {{children1.type}}
@@ -87,7 +28,7 @@
             <li *ngFor="let children2 of children1.children">
               <span class="tf-nc" (click)="getDetail(children2)"  style="display: flex; align-items: center; flex-direction: column; text-align: center;">
                 <div class="img-wrapper">
-                  <img src="{{(getImgUrl(children2.imgUrl))? getImgUrl(children2.imgUrl) : '/assets/user/user1.png'}}" alt="super deal">
+                  <img src="{{( getImgUrl(children2.imgUrl))?url + getImgUrl(children2.imgUrl) : './assets/user/user1.png'}}" alt="super deal">
                 </div>
                 {{children2.name}}<br>
                 {{children2.type}}
@@ -98,7 +39,7 @@
                 <li *ngFor="let children3 of children2.children">
                   <span class="tf-nc" (click)="getDetail(children3)" style="display: flex; align-items: center; flex-direction: column; text-align: center;">
                     <div class="img-wrapper">
-                      <img src="{{(getImgUrl(children3.imgUrl))? getImgUrl(children3.imgUrl) : '/assets/user/user1.png'}}" alt="super deal">
+                      <img src="{{( getImgUrl(children3.imgUrl))?url +  getImgUrl(children3.imgUrl) : './assets/user/user1.png'}}" alt="super deal">
                     </div>
                     {{children3.name}}<br>
                     {{children3.type}}
@@ -109,13 +50,13 @@
                     <li *ngFor="let children4 of children3.children">
                       <span class="tf-nc" (click)="getDetail(children4)" style="display: flex; align-items: center; flex-direction: column; text-align: center;">
                         <div class="img-wrapper">
-                          <img src="{{(getImgUrl(children4.imgUrl))? getImgUrl(children4.imgUrl) : '/assets/user/user1.png'}}" alt="super deal">
+                          <img src="{{( getImgUrl(children4.imgUrl))? url + getImgUrl(children4.imgUrl) : './assets/user/user1.png'}}" alt="super deal">
                         </div>
                         {{children4.name}}<br>
                         {{children4.type}}
                       </span>
                     </li>
-    
+
                   </ul>
                 </li>
 
@@ -135,7 +76,7 @@
 <div class="modal-container" *ngIf="detailData">
   <div class="content card">
     <div class="img-warp">
-      <img src="{{(getImgUrl(detailData.imgUrl))? getImgUrl(detailData.imgUrl) : '/assets/user/user1.png'}}" alt="super deal">
+      <img src="{{(getImgUrl(detailData.imgUrl))?url + getImgUrl(detailData.imgUrl) : './assets/user/user1.png'}}" alt="super deal">
     </div>
     <div class="info">
       <p>{{detailData.name}}</p>

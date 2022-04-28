@@ -43,7 +43,7 @@
       <div class="news-wrapper" *ngFor="let item of newsList" [routerLink]="['/detail',item.news_id]"
         routerLinkActive="router-link-active">
         <div class="news-img">
-          <img src="http://216.127.173.163/{{item.imgUrl[0]}}" alt="">
+          <img src="{{url + item.imgUrl[0]}}" alt="">
           <div class="news-bg">
             <div class="news-title">
               <h4>{{item.title}}</h4>

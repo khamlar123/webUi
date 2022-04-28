@@ -20,6 +20,10 @@ export class ServiceService {
   public Url2 = 'http://odxdoic.gov.la/oudomxay/api/';
   public Url3 = 'http://lntdoic.gov.la/louangnamtha/api/';
 
+  getImgUrl(id: number): string{
+    return (id === 1)? 'http://psldoic.gov.la/':(id === 2)? 'http://odxdoic.gov.la/oudomxay/': 'http://lntdoic.gov.la/louangnamtha/'
+  }
+
 
   public setHeader(method: string): HttpHeaders {
 

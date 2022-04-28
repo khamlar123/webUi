@@ -16,10 +16,13 @@ export class HotProductComponent implements OnInit, OnDestroy {
   public productList: any[] = [];
   public imgUrl: any[] = [];
   public imageList: any[] = [];
+  url = ''
   constructor(
     public service: ServiceService,
     private homePageAPI: HomePageApiService
-  ) { }
+  ) {
+    this.url = this.service.getImgUrl(1);
+  }
 
   ngOnInit(): void {
 

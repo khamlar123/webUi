@@ -12,7 +12,7 @@
       <div class="company-wrapper card" [routerLink]="['/teaproducts-detail/',item.teaId]"
       routerLinkActive="router-link-active" >
         <div class="img-wrapper">
-            <img [src]="getImg(item.teacLogo)" alt="img">
+            <img [src]="url + getImgUrl(item.teacLogo)" alt="img">
         </div>
         <div class="company-name">
             <p>{{item.teaDsc}}</p>

@@ -16,12 +16,14 @@ export class NewsDetailComponent implements OnInit, OnDestroy {
   public loadCoverSubscription: Subscription | undefined;
   public newsDetailList: any[] = [];
   public coverList: any[] = [];
-
+  url = '';
   constructor(
     private route: ActivatedRoute,
     public service: ServiceService,
     private newDetailApiService: NewDetailApiService
-  ) { }
+  ) {
+    this.url = this.service.getImgUrl(1);
+   }
 
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
@@ -59,6 +61,8 @@ export class NewsDetailComponent implements OnInit, OnDestroy {
       }
     });
   }
+
+
 
 
 

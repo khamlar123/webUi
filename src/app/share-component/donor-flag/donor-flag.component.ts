@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from 'src/app/service.service';
 import { ApiService } from './api/api.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { ApiService } from './api/api.service';
   styleUrls: ['./donor-flag.component.scss']
 })
 export class DonorFlagComponent implements OnInit {
-  url = `http://psldoic.gov.la/`;
+  url = ``;
   donorList: {
     donor_id: string;
     dsc: string;
@@ -15,7 +16,12 @@ export class DonorFlagComponent implements OnInit {
     orderIndex: string;
     title: string;
   }[] = [];
-  constructor(private api : ApiService) { }
+  constructor(
+    private api : ApiService,
+    public service: ServiceService
+    ) {
+      this.url = this.service.getImgUrl(1);
+     }
 
   ngOnInit(): void {
     this.loadDonor();
@@ -27,7 +33,7 @@ export class DonorFlagComponent implements OnInit {
     })
   }
 
-  imgUrl(url: string): string {
+  getImgUrl(url: string): string {
 
     if (url) {
       return (JSON.parse(url)[0]) ? JSON.parse(url)[0] : JSON.parse(url);

@@ -16,12 +16,14 @@ export class ProductComponent implements OnInit, OnDestroy {
   public imgUrl: any[] = [];
   public imageList: any[] = [];
   id = 0;
-
+  url = '';
   constructor(
     public service: ServiceService,
     private productApiService: ProductApiService,
     private route: ActivatedRoute
-  ) { }
+  ) {
+    this.url = this.service.getImgUrl(1);
+  }
 
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
@@ -108,6 +110,15 @@ export class ProductComponent implements OnInit, OnDestroy {
     if (this.id == 3) return `/product-detail/${pid}/3`;
     return '';
 
+  }
+
+  getImgUrl(url: string): string {
+
+    if (url) {
+      return (JSON.parse(url)[0]) ? JSON.parse(url)[0] : JSON.parse(url);
+    } else {
+      return url;
+    }
   }
 
 

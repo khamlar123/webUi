@@ -3,7 +3,7 @@
 
     <div class="head-super-deal">
       <div class="the-side">
-        <img src="../assets/product-ex/super_deal.svg" alt="">
+        <img src="./assets/product-ex/super_deal.svg" alt="">
         <p> ສິນຄ້າ</p>
       </div>
       <div class="the-side see-more">
@@ -17,7 +17,7 @@
     <div class="content-deal">
       <a class="product-deal"  *ngFor="let prod of productList" [routerLink]="[productLink(prod.prod_id)]" routerLinkActive="router-link-active" >
         <div class="product-deal-img">
-          <img src="http://216.127.173.163/{{prod.imgUrl[0]}}" alt="super deal">
+          <img src="{{ url+prod.imgUrl[0]}}" alt="super deal">
         </div>
 
         <div class="title-price">

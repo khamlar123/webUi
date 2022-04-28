@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ServiceService } from 'src/app/service.service';
 import { CategoryService } from './api/category.service';
 
 @Component({
@@ -10,11 +11,14 @@ import { CategoryService } from './api/category.service';
 export class CategoryDetailComponent implements OnInit {
   id = 0;
   bandDetail: any;
-  enpoin = `http://psldoic.gov.la`;
+  enpoin = ``;
   constructor(
     private route: ActivatedRoute,
-    private api: CategoryService
-  ) { }
+    private api: CategoryService,
+    public service: ServiceService
+  ) {
+    this.enpoin = this.service.getImgUrl(1);
+  }
 
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
@@ -37,10 +41,11 @@ export class CategoryDetailComponent implements OnInit {
 
 
   getImgUrl(url: string): string {
+
     if (url) {
-      return JSON.parse(url)[0] ? JSON.parse(url)[0] : JSON.parse(url);
+      return (JSON.parse(url)[0]) ? JSON.parse(url)[0] : JSON.parse(url);
     } else {
-      return '';
+      return url;
     }
   }
 

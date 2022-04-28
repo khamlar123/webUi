@@ -16,8 +16,8 @@ url = '';
     private routes: Router,
     private api : ApiService,
     private service: ServiceService
-  ) { 
-    this.url = this.service.baseURL;
+  ) {
+    this.url = this.service.getImgUrl(1);
   }
 
   jsonData: {
@@ -49,21 +49,23 @@ url = '';
   }
 
   loadDetail():void{
-    const modal = { 
+    const modal = {
       teaId: this.id
     }
     this.api.loadProductTeaDetail(modal).subscribe(res => {
       this.jsonData = res.data[0];
       console.log(res);
-      
+
     })
   }
 
-  getImg(url: string): string{
-    if(url !== undefined){
-      return  this.url.split("/api")[0] + JSON.parse(url)[0].slice(7, url.length)
+  getImgUrl(url: string): string {
+
+    if (url) {
+      return (JSON.parse(url)[0]) ? JSON.parse(url)[0] : JSON.parse(url);
+    } else {
+      return url;
     }
-    return '';
   }
 
 }
