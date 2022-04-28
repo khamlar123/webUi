@@ -33,23 +33,23 @@
       <div class="table-wrapper">
         <table>
           <tr style="height: 35px;">
-            <th>ລໍາດັບ</th>
-            <th>ຫົວຂໍ້ອັບເດດສີນຄ້າ</th>
-            <th>ແຂວງຜົ້ງສາລີ</th>
-            <th>ແຂວງອຸດົມໄຊ</th>
-            <th>ແຂວງຫຼວງນໍ້າທາ</th>
-            <th>ອັບແດດຫຼ່າສຸດ</th>
+            <th >ລໍາດັບ</th>
+            <th style="width: 230px;">ຫົວຂໍ້ອັບເດດສີນຄ້າ</th>
+            <th style="width: 120px;">ແຂວງ</th>
+            <th style="width: 150px;">ລາຄາ</th>
+            <th style="width: 120px;">ອັບແດດຫຼ່າສຸດ</th>
           </tr>
 
           <tr style="height: 40px;" *ngFor="let item of getHistory(); let i = index">
             <td>{{i+1}}</td>
             <td>{{item.title}}</td>
-            <td>{{(item.price === "0")? " " : item.price | currency: ' ':'':'1.0-0'}}</td>
-            <td>{{(item.price2 === "0")? " " : item.price2 | currency: ' ':'':'1.0-0'}}</td>
-            <td>{{(item.price3 === "0")? " " : item.price3| currency: ' ':'':'1.0-0'}}</td>
+            <td>{{item.pvName}}</td>
+             <td>{{(item.price === "0")? " " : item.price | currency: ' ':'':'1.0-0'}}</td>
             <td>{{item.createDate | date: "dd/MM/yyyy"}}</td>
           </tr>
         </table>
+
+   
       </div>
 
       <div class="colse">

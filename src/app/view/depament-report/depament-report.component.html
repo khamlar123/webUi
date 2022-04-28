@@ -13,13 +13,13 @@
         <table>
           <tr>
             <th style="width: 80px;">ລ/ດ</th>
-            <th style="min-width: 160px;">ຊື່</th>
-            <th>ລາຍລະອຽດ</th>
-            <th style="min-width: 140px;">ວັນທີອັບເດດຫຼ້າສຸດ</th>
-            <th style="min-width: 80px;">ດາວໂລດ</th>
+            <th style="width: 250px;">ຊື່</th>
+            <th style="width: 800px;">ລາຍລະອຽດ</th>
+            <th style="width: 140px;">ວັນທີອັບເດດຫຼ້າສຸດ</th>
+            <th style="width: 80px;">ດາວໂລດ</th>
           </tr>
           <tr *ngFor="let item of getItems();let i = index">
-            <td>{{i+1}}</td>
+            <td style="width: 80px;">{{i+1}}</td>
             <td>{{item.title}}</td>
             <td>
               <p id="hiden">

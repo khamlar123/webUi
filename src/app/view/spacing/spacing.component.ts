@@ -112,11 +112,14 @@ export class SpacingComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadOrgList();
+   
+    
   }
 
   loadOrgList(): void {
     this.api.loadStructures('').subscribe(res => {
       this.newData = res.data.filter((f: { org_id: string; }) => f.org_id === '1');
+      console.log(this.newData);
       const map = res.data.filter((f: { org_id: string; }) => f.org_id === '1').map((m: OrgData) => {
         return {
           name: m.name,

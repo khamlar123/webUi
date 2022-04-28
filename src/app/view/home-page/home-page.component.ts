@@ -32,7 +32,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
     public service: ServiceService,
     private homePageAPI: HomePageApiService
   ) {
-    this.url = this.service.getImgUrl(1);
+    this.enpoin = this.service.getImgUrl(1);
    }
 
   ngOnInit(): void {

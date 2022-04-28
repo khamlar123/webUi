@@ -48,6 +48,29 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
 
   historyList: any[] = [];
 
+  masterList:{
+    dsc: string;
+    gen_id: string;
+    imgUrl: string;
+    notice_id: string;
+    price: string;
+    title: string;
+    web_id: string;
+    province: string;
+    pvName : string;
+  }[] = [];
+  showDataList: {
+    dsc: string;
+    gen_id: string;
+    imgUrl: string;
+    notice_id: string;
+    price: string;
+    title: string;
+    web_id: string;
+    province: string;
+    pvName : string;
+  }[] = [];
+
   constructor(private noticeApiService: NoticeApiService, private main: ServiceService) { }
 
   ngOnInit(): void {
@@ -70,6 +93,12 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
     this.loadNoticeSubscription = this.noticeApiService.loadNotice(setParams).subscribe(res => {
       if (res.status === '1') {
         this.noticeList = res.data.Data;
+        res.data.Data.forEach(e => {
+          e.pvName = 'ແຂວງຜົ້ງສາລີ';
+          this.masterList.push(e);
+
+        });
+        
         // tslint:disable-next-line:prefer-for-of
         for (let i = 0; i < this.noticeList.length; i++) {
           this.noticeList[i].imgUrl = JSON.parse(this.noticeList[i].imgUrl);
@@ -86,8 +115,11 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
     };
     this.loadNoticeSubscription = this.noticeApiService.loadNotice2(setParams).subscribe(res => {
       if (res.status === '1') {
-        this.noticeList2 = res.data.Data;
-        // tslint:disable-next-line:prefer-for-of
+        this.noticeList2 = res.data.Data;        
+        res.data.Data.forEach(e => {
+          e.pvName = 'ແຂວງອຸດົມໄຊ';
+          this.masterList.push(e)
+        });
         for (let i = 0; i < this.noticeList2.length; i++) {
           this.noticeList2[i].imgUrl = JSON.parse(this.noticeList2[i].imgUrl);
         }
@@ -104,6 +136,10 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
     this.loadNoticeSubscription = this.noticeApiService.loadNotice3(setParams).subscribe(res => {
       if (res.status === '1') {
         this.noticeList3 = res.data.Data;
+        res.data.Data.forEach(e => {
+          e.pvName = 'ແຂວງຫຼວງນໍ້າທາ';
+          this.masterList.push(e)
+        });
         // tslint:disable-next-line:prefer-for-of
         for (let i = 0; i < this.noticeList3.length; i++) {
           this.noticeList3[i].imgUrl = JSON.parse(this.noticeList3[i].imgUrl);
@@ -132,26 +168,34 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
   }
 
   setHistory(model: any): void {
-    this.noticeList.filter(f => f.gen_id === model.gen_id).forEach(e => {
-      this.historyList.push(e);
-    });
-    let i = -1;
-    this.historyList.forEach(e => {
-      i++;
-      e.price2 = this.noticeList2.filter(f => f.gen_id === model.gen_id).map(m => m.price)[i];
-    });
 
-    let p = -1;
-    this.historyList.forEach(e => {
-      p++;
-      e.price3 = this.noticeList3.filter(f => f.gen_id === model.gen_id).map(m => m.price)[p];
-    });
+    console.log(model);
+    
+ 
+  this.showDataList = this.masterList.filter(f => f.gen_id === model.gen_id);
+
+
+    // let i = -1;
+    // this.historyList.forEach(e => {
+    //   i++;
+
+
+    //   e.price2 = this.noticeList2.filter(f => f.gen_id === model.gen_id).map(m => m.price)[i];
+    // });
+
+    // let p = -1;
+    // this.historyList.forEach(e => {
+    //   p++;
+    //   e.price3 = this.noticeList3.filter(f => f.gen_id === model.gen_id).map(m => m.price)[p];
+    // });
 
     this.openModalHistory = true;
   }
 
-  getHistory(): any[] {
-    return this.historyList;
+  getHistory(): any[] {    
+    console.log('larrrrrrr',this.showDataList);
+    
+    return this.showDataList;
   }
 
   closeFunc(): void {

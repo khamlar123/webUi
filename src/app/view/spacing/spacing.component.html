@@ -7,9 +7,7 @@
 
     <div class="container">
       <div class="img-wrapper" style="display: flex; align-items: center; justify-content: center;">
-
-        <!-- <app-org-data [modal]="masterOrgList"></app-org-data> -->
-        <app-org2 [modal]="newData"></app-org2>
+        <app-org2 [modal]="newData" [ngClass]="{'zoom': newData[0].children.length > 3}"></app-org2>
       </div>
     </div>
 
