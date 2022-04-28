@@ -20,12 +20,13 @@ export class ProductDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private productDetailApiService: ProductDetailApiService
   ) {
-    this.url = this.service.getImgUrl(1);
+    
   }
 
   ngOnInit(): void {
     this.prodId = Number(this.route.snapshot.paramMap.get('id'));
     this.web = Number(this.route.snapshot.paramMap.get('web'));
+    this.url = this.service.getImgUrl(this.web);
     (this.web == 3) ? this.loadProductDetail3() : (this.web == 2) ? this.loadProductDetail2() : this.loadProductDetail()
 
   }
