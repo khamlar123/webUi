@@ -61,9 +61,13 @@ export class DevelopmentPlanComponent implements OnInit {
     })
   }
 
-  getImgUrl(url: string):string{
-    let str = JSON.parse(url)[0];
-    return this.url + str.slice(7, str.length);
+  getImgUrl(url: string): string {
+
+    if (url) {
+      return (JSON.parse(url)[0]) ? JSON.parse(url)[0] : JSON.parse(url);
+    } else {
+      return url;
+    }
   }
 
   getItems(){
