@@ -11,9 +11,9 @@
           <tr>
             <th>ລໍາດັບ</th>
             <th>ຫົວຂໍ້ອັບເດດສີນຄ້າ</th>
-            <th>ແຂວງຜົ້ງສາລີ</th>
-            <th>ແຂວງອຸດົມໄຊ</th>
-            <th>ແຂວງຫຼວງນໍ້າທາ</th>
+            <th>{{getItle1()}}</th>
+            <th>{{getTitle2()}}</th>
+            <th>{{getTitle3()}}</th>
           </tr>
           <tr *ngFor="let item of getData();let i = index" (click)="setHistory(item)">
             <td>{{i+1}}</td>

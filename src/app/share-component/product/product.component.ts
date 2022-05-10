@@ -90,15 +90,12 @@ export class ProductComponent implements OnInit, OnDestroy {
     this.productListSubscription = this.productApiService.loadProduct3(setParams).subscribe(res => {
 
       if (res.status == 1) {
-
-        console.log(res);
         this.productList = res.data.Data;
 
         for (let i = 0; i < this.productList.length; i++) {
           this.productList[i].imgUrl = JSON.parse(this.productList[i].imgUrl);
         }
 
-        console.log(`1`, this.productList);
       }
     });
   }

@@ -99,5 +99,13 @@ export class ProductListComponent implements OnInit {
     return array;
   }
 
+  getTitleName2(): string{
+    return (this.service.getImgUrl(2) === 'http://psldoic.gov.la/')? 'ສີນຄ້າຜົ້ງສາລີ' :(this.service.getImgUrl(2) === 'http://odxdoic.gov.la/')? 'ສີນຄ້າອຸດົມໄຊ' : 'ສີນຄ້າຫຼວງນໍ້າທາ'
+  }
+
+  getTitleName3(): string{
+    return (this.service.getImgUrl(3) === 'http://psldoic.gov.la/')? 'ສີນຄ້າຜົ້ງສາລີ' :(this.service.getImgUrl(3) === 'http://odxdoic.gov.la/')? 'ສີນຄ້າອຸດົມໄຊ' : 'ສີນຄ້າຫຼວງນໍ້າທາ'
+  }
+
 
 }

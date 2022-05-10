@@ -11,6 +11,7 @@ export class ShareProductComponent implements OnInit, OnDestroy {
   @Input() prodList: any[] = [];
   @Input() title: string = '';
   @Input() url = '';
+  @Input() pageId = 0;
   public productListSubscription: Subscription | undefined;
   public productList: any[] = [];
   public imgUrl: any[] = [];
@@ -29,18 +30,11 @@ export class ShareProductComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
 
-  checkTitle() {
-    if (this.title === 'ສີນຄ້າຜົ້ງສາລີ') return '/product-list/1';
-    if (this.title === 'ສີນຄ້າອຸດົມໄຊ') return '/product-list/2';
-    if (this.title === 'ສີນຄ້າຫຼວງນ້ຳທາ') return '/product-list/3';
-    return '';
-  }
-
+  
   productLink(id: number) {
-    if (this.title === 'ສີນຄ້າຜົ້ງສາລີ') return `/product-detail/${id}/1`;
-    if (this.title === 'ສີນຄ້າອຸດົມໄຊ') return `/product-detail/${id}/2`;
-    if (this.title === 'ສີນຄ້າຫຼວງນ້ຳທາ') return `/product-detail/${id}/3`;
-    return '';
+
+   return `/product-detail/${id}/${this.pageId}`;
+
   }
 
 }

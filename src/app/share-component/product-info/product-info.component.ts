@@ -94,9 +94,10 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
       if (res.status === '1') {
         this.noticeList = res.data.Data;
         res.data.Data.forEach(e => {
-          e.pvName = 'ແຂວງຜົ້ງສາລີ';
+          e.pvName = (this.main.baseURL === 'http://psldoic.gov.la/website/api/')? 'ແຂວງຜົ້ງສາລີ': (this.main.baseURL === 'http://odxdoic.gov.la/oudomxay/api/')? 'ແຂວງອຸດົມໄຊ': 'ແຂວງຫຼວງນໍ້າທາ';
           this.masterList.push(e);
 
+          
         });
         
         // tslint:disable-next-line:prefer-for-of
@@ -117,7 +118,7 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
       if (res.status === '1') {
         this.noticeList2 = res.data.Data;        
         res.data.Data.forEach(e => {
-          e.pvName = 'ແຂວງອຸດົມໄຊ';
+          e.pvName = (this.main.Url2 === 'http://psldoic.gov.la/website/api/')? 'ແຂວງຜົ້ງສາລີ': (this.main.Url2 === 'http://odxdoic.gov.la/oudomxay/api/')? 'ແຂວງອຸດົມໄຊ': 'ແຂວງຫຼວງນໍ້າທາ';
           this.masterList.push(e)
         });
         for (let i = 0; i < this.noticeList2.length; i++) {
@@ -137,7 +138,7 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
       if (res.status === '1') {
         this.noticeList3 = res.data.Data;
         res.data.Data.forEach(e => {
-          e.pvName = 'ແຂວງຫຼວງນໍ້າທາ';
+          e.pvName = (this.main.Url3 === 'http://psldoic.gov.la/website/api/')? 'ແຂວງຜົ້ງສາລີ': (this.main.Url3 === 'http://odxdoic.gov.la/oudomxay/api/')? 'ແຂວງອຸດົມໄຊ': 'ແຂວງຫຼວງນໍ້າທາ';
           this.masterList.push(e)
         });
         // tslint:disable-next-line:prefer-for-of
@@ -202,6 +203,18 @@ export class ProductInfoComponent implements OnInit, OnDestroy {
     this.openModalHistory = false;
     this.historyList = [];
 
+  }
+
+  getItle1():string{
+    return (this.main.baseURL === 'http://psldoic.gov.la/website/api/')? 'ແຂວງຜົ້ງສາລີ': (this.main.baseURL === 'http://odxdoic.gov.la/oudomxay/api/')? 'ແຂວງອຸດົມໄຊ': 'ແຂວງຫຼວງນໍ້າທາ';
+  }
+
+  getTitle2(): string{
+    return (this.main.Url2 === 'http://psldoic.gov.la/website/api/')? 'ແຂວງຜົ້ງສາລີ': (this.main.Url2 === 'http://odxdoic.gov.la/oudomxay/api/')? 'ແຂວງອຸດົມໄຊ': 'ແຂວງຫຼວງນໍ້າທາ';
+  }
+
+  getTitle3(): string{
+    return (this.main.Url3 === 'http://psldoic.gov.la/website/api/')? 'ແຂວງຜົ້ງສາລີ': (this.main.Url3 === 'http://odxdoic.gov.la/oudomxay/api/')? 'ແຂວງອຸດົມໄຊ': 'ແຂວງຫຼວງນໍ້າທາ';
   }
 
 
