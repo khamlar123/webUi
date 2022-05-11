@@ -6,7 +6,7 @@
 
     <iframe *ngIf="!checkVdio()" [src]="safeSrc[pos]"  frameborder="0" allowfullscreen style="height: 400px;"></iframe>
     <video *ngIf="checkVdio()"   height="400" controls>
-      <source src="{{url + getImgUrl(vdioList[pos].video_url) }}" type="video/mp4">
+      <source src="{{url + vdioList[pos].video_url }}" type="video/mp4">
     </video>
     <div class="vdio-info">
         <!-- <p *ngIf="pos">{{vdioList[pos].video_description}}</p> -->
@@ -19,7 +19,7 @@
               <iframe  *ngIf="item.status == '0'"  [src]="safeSrc[i]" frameborder="0" allowfullscreen style="width: 150px; height: 100px;"></iframe>
 
               <video *ngIf="item.status == '1'" width="150"  height="100" controls>
-                <source src="{{url + getImgUrl(item.video_url)}}" type="video/mp4">
+                <source src="{{url + item.video_url}}" type="video/mp4">
               </video>
             </div>
             <div class="vdio-detail">
