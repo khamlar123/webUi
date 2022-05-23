@@ -50,17 +50,15 @@
       <div class="body-content">
 
         <div class="logo" [routerLink]="['/home']" routerLinkActive="router-link-active">
-          <img src="./assets/logo/logo_ponsaly.jpeg" alt="">
+          <img [src]="getMainUrl()" alt="">
         </div>
 
         <div class="title">
-          <h3>ພະແນກອຸດສາຫະກຳ ແລະ ການຄ້າ ແຂວງຜົ້ງສາລີ</h3>
-          <h4>Department of Industry and Commerce of Phongsaly Province</h4>
+          <h3>{{laoTitle}}</h3>
+          <h4>{{engTitle}}</h4>
         </div>
         <div></div>
-        <!-- <div class="logo">
-                  <img src="../../../assets/logo/logo.png" alt="">
-              </div> -->
+
 
       </div>
     </div>
@@ -70,13 +68,6 @@
         <div class="menu-item no-pl">
           <a class="fromLeft" href="javascript:void(0)" [routerLink]="['/home']"
             routerLinkActive="router-link-active">ຫນ້າຫຼັກ </a> <span>|</span>
-          <!-- <div class="hover-menu">
-                          <p>Laos Company </p>
-                          <p>Banking and Finance</p>
-                          <p>Energy and Mining</p>
-                          <p>Corporate and</p>
-                          <p>Taxation</p>
-                      </div> -->
         </div>
 
         <div class="menu-item">
@@ -111,25 +102,10 @@
         <div class="menu-item">
           <a class="fromLeft" href="javascript:void(0)" [routerLink]="['/product-list/1']"
             routerLinkActive="router-link-active">ສິນຄ້າ ODOP ແລະ ສິນຄ້າທ່າແຮງ</a> <span>|</span>
-          <!-- <div class="hover-menu m2">
-            <p>Laos Company </p>
-            <p>Banking and Finance</p>
-            <p>Energy and Mining</p>
-            <p>Corporate and</p>
-            <p>Taxation</p>
-          </div> -->
         </div>
 
-        <div class="menu-item">
-          <a class="fromLeft" href="javascript:void(0)" [routerLink]="['/teaproducts']"
-            routerLinkActive="router-link-active">ຜະລິດຕະພັນຊາ / Tea</a> <span>|</span>
-          <!-- <div class="hover-menu m2">
-            <p>ສະຖິຕິພະນັກງານລັດຖະກອນ</p>
-            <p>ສະຖິຕິອຸດສາຫະກໍາ ແລະ ຫັດຖະກໍາ</p>
-            <p>ສະຖິຕິການຄ້າພາຍໃນ</p>
-            <p>ສະຖິຕທິ ະບຽນ</p>
-            <p>ສະຖິຕິນໍາເຂົ້າ ແລະ ສົ່ງອອກ</p>
-          </div> -->
+        <div class="menu-item" *ngIf="checkMenu()">
+          <a class="fromLeft" href="javascript:void(0)" [routerLink]="['/teaproducts']" routerLinkActive="router-link-active">ຜະລິດຕະພັນຊາ / Tea</a> <span>|</span>
         </div>
 
         <div class="menu-item">

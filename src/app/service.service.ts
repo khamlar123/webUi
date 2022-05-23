@@ -16,12 +16,12 @@ export class ServiceService {
   // public Url3 = 'http://216.127.173.163/louangnamtha/api/';
 
 
-  public baseURL = 'http://psldoic.gov.la/website/api/';
+  public baseURL = 'http://lntdoic.gov.la/louangnamtha/api/';
   public Url2 = 'http://odxdoic.gov.la/oudomxay/api/';
-  public Url3 = 'http://lntdoic.gov.la/louangnamtha/api/';
+  public Url3 = 'http://psldoic.gov.la/website/api/';
 
   getImgUrl(id: number): string{
-    return (id === 1)? 'http://psldoic.gov.la/':(id === 2)? 'http://odxdoic.gov.la/': 'http://lntdoic.gov.la/'
+    return (id === 1)? 'http://lntdoic.gov.la/':(id === 2)? 'http://odxdoic.gov.la/': 'http://psldoic.gov.la/'
   }
 
 

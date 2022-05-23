@@ -5,12 +5,12 @@
       <div class="img-slider">
         <h3>ຮູບພາບການເຄື່ອນໄຫວ</h3>
         <div class="img-wrapper">
+
           <div class="slider-wrapper">
             <ng-container *ngFor="let item of bannerRef1List; let i = index">
               <a href="" [[routerLink]="['/news-list', 2]"><img *ngIf="imgIndex === i"
                   src="{{enpoin + getImgUrl(item.imgUrl)}}" alt=""></a>
             </ng-container>
-
           </div>
 
           <div class="dot">
@@ -32,6 +32,7 @@
               </span>
             </button>
           </div>
+
         </div>
       </div>
     </div>
@@ -68,6 +69,7 @@
   <div class="product-wrapper" style="margin-bottom: 1rem;">
     <app-hot-product [title]="'ສີນຄ້າຫຼວງນ້ຳທາ'" [prodList]="prodList3"></app-hot-product>
   </div> -->
+
   <app-sitelink-info></app-sitelink-info>
   <app-product-info></app-product-info>
 
